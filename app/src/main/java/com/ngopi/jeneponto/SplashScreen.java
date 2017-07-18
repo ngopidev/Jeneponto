@@ -2,6 +2,7 @@ package com.ngopi.jeneponto;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.transition.Transition;
 
 public class SplashScreen extends AppCompatActivity {
 
@@ -9,5 +10,6 @@ public class SplashScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_splash);
+        onDestroy();
     }
 }
