@@ -11,5 +11,6 @@ public class SplashScreen extends AppCompatActivity {
         setContentView(R.layout.layout_splash);
 
         onDestroy();
+        onStop();
     }
 }
