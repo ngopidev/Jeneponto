@@ -16,7 +16,7 @@
         android:id="@+id/logoID"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:background="@drawable/Jeneponto"
+        android:background="@drawable/jeneponto"
         android:layout_centerInParent="true"
         android:layout_centerHorizontal="true"
         />
