@@ -20,6 +20,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".Wisata" />
+        <activity android:name=".Peluang" />
+        <activity android:name=".Prosedur" />
+        <activity android:name=".Tracking" />
+        <activity android:name=".Kalkulator" />
+        <activity android:name=".Keluhan" />
+        <activity android:name=".Hubungi" >
+        </activity>
     </application>
 
 </manifest>

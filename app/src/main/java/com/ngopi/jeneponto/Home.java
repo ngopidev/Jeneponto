@@ -1,5 +1,6 @@
 package com.ngopi.jeneponto;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -12,6 +13,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
+
+import java.net.Inet4Address;
 
 public class Home extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -23,14 +27,14 @@ public class Home extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        /*FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
-        });
+        }); */
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -52,7 +56,7 @@ public class Home extends AppCompatActivity
         }
     }
 
-    /*@Override
+        /* @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.home, menu);
@@ -83,21 +87,28 @@ public class Home extends AppCompatActivity
         if (id == R.id.beranda) {
             // Handle the camera action
         } else if (id == R.id.wisata) {
-
+            Intent wisata = new Intent(Home.this, Wisata.class);
+            startActivity(wisata);
         } else if (id == R.id.peluang) {
-
+            Intent peluang = new Intent(Home.this, Peluang.class);
+            startActivity(peluang);
         } else if (id == R.id.prosedur) {
-
+            Intent prosedur = new Intent(Home.this, Prosedur.class);
+            startActivity(prosedur);
         } else if (id == R.id.tracking) {
-
+            Intent tracking = new Intent(Home.this, Tracking.class);
+            startActivity(tracking);
         } else if (id == R.id.kalkulator) {
-
+            Intent kalkulator = new Intent(Home.this, Kalkulator.class);
+            startActivity(kalkulator);
         } else if (id == R.id.keluhan) {
-
+            Intent keluhan = new Intent(Home.this, Keluhan.class);
+            startActivity(keluhan);
         } else if (id == R.id.hubungi) {
-
+            Intent hubungi = new Intent(Home.this, Hubungi.class);
+            startActivity(hubungi);
         } else if (id == R.id.bahasa) {
-
+            Toast.makeText(getApplicationContext(), "Bahasa Inggris belum tersedia", Toast.LENGTH_SHORT).show();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
