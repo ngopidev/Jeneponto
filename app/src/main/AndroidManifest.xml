@@ -4,22 +4,28 @@
 
     <application
         android:allowBackup="true"
-        android:banner="@drawable/jeneponto2"
-        android:icon="@mipmap/ic_launcher"
+        android:banner="@drawable/jeneponto"
+        android:icon="@drawable/jeneponto"
         android:label="Jeneponto"
-        android:logo="@drawable/jeneponto2"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity
-            android:name=".SplashScreen"
+        <!--this for splash screen-->
+        <activity android:name=".SplashScreen"
             android:label="Jeneponto"
-            android:theme="@style/AppTheme">
+            android:theme="@style/AppTheme.NoActionBar"
+
+            >
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-    </application>
+    <activity
+        android:name=".Home"
+        android:label="Jeneponto"
+        android:theme="@style/AppTheme"/>
+</application>
 
 </manifest>
