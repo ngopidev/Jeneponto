@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/beranda"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Beranda" />
+        <item
+            android:id="@+id/wisata"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Wisata ke Jeneponto" />
+        <item
+            android:id="@+id/peluang"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Peluang Investasi" />
+        <item
+            android:id="@+id/prosedur"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Prosedur Perizinan" />
+        <item
+            android:id="@+id/tracking"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Tracking Perizinan" />
+        <item
+            android:id="@+id/kalkulator"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Kalkulator Retribusi" />
+        <item
+            android:id="@+id/keluhan"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Keluhan Warga" />
+        <item
+            android:id="@+id/hubungi"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Hubungi Kami" />
+        <item
+            android:id="@+id/bahasa"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Pengaturan Bahasa" />
+    </group>
+
+</menu>
