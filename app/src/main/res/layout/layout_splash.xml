@@ -8,12 +8,28 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:background="@drawable/background"
+    android:backgroundTint="@color/cardview_dark_background"
+    android:backgroundTintMode="multiply"
     tools:context="com.ngopi.jeneponto.SplashScreen">
 
     <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/jeneponto"
+        android:id="@+id/logoID"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:background="@drawable/Jeneponto"
+        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"
         />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/logoID"
+        android:layout_centerHorizontal="true"
+        android:text="Aplikasi Kabupaten jeneponto\n versi 1.0"
+        android:textAlignment="center"
+        android:textColor="@color/cardview_light_background"
+        android:textSize="20sp" />
 
 </RelativeLayout>
