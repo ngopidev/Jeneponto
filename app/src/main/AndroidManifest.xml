@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.ngopi.jeneponto">
-
+    <uses-permission android:name="android.permission.INTERNET" />
     <application
+        android:name=".app.AppController"
         android:allowBackup="true"
         android:banner="@drawable/jeneponto2"
         android:icon="@mipmap/ic_launcher"
@@ -20,14 +21,21 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity android:name=".Wisata" />
+
         <activity android:name=".Peluang" />
+
         <activity android:name=".Prosedur" />
+
         <activity android:name=".Tracking" />
+
         <activity android:name=".Kalkulator" />
+
         <activity android:name=".Keluhan" />
-        <activity android:name=".Hubungi" >
-        </activity>
+
+        <activity android:name=".Hubungi" />
+
     </application>
 
 </manifest>
