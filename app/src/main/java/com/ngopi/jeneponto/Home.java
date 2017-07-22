@@ -167,7 +167,6 @@ public class Home extends AppCompatActivity
         } else if (id == R.id.keluhan) {
 
         } else if (id == R.id.hubungi) {
-
             if (R.id.FContent == R.layout.layout_contact) {
                     //do Nothing
             }else{
