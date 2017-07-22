@@ -11,7 +11,7 @@ import android.view.WindowManager;
 public class SplashScreen extends AppCompatActivity {
 
     //Set waktu lama splashscreen
-    private static int splashInterval = 2000;
+    private static int splashInterval = 1200;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -7,4 +7,8 @@
 
     <string name="action_settings">Settings</string>
     <string name="title_activity_home">Home</string>
+    <string name="headOffice"><b>Head Office</b>\nAlamat Kabupaten Jeneponto\n<b>Phone</b> : nomor telephone\n<b>Fax</b> : nomor Fax</string>
+    <string name="OfficeHours"><b>Office Hours(GMT +7)</b>\nMonday - Thursday : dari jam berapa sampai jam berapa\nFriday : dari jam berapa sampai jam berapa\nSaturday, Sunday : Closed</string>
+    <string name="OfficeHours2"><b>Licensing and Non Licensing\nService Hours(GMT +7)</b>\nMonday - Thursday : dari jam berapa sampai jam berapa\nFriday : dari jam berapa sampai jam berapa\nSaturday, Sunday : Closed</string>
 </resources>
+

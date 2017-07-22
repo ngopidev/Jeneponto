@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!--these are primary color from Jeneponto Apps
+    greenHard   : #388178
+    greenLight  : #54C0B3
+    YellowLight : #F5F094
+    YellowHard  : #FBD66C
+    -->
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="greenHard">#388178</color>
+    <color name="yellowHard">#FBD66C</color>
+    <color name="greenLight">#54C0B3</color>
+    <color name="yellowLight">#F5F094</color>
 </resources>

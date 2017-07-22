@@ -26,6 +26,12 @@
         android:name=".Home"
         android:label="Jeneponto"
         android:theme="@style/AppTheme"/>
-</application>
+        <activity android:name=".Contact"
+            android:label="Jeneponto"
+            android:theme="@style/AppTheme"/>
+        <activity android:name=".Bahasa"
+            android:label="Jeneponto"
+            android:theme="@style/AppTheme"/>
+    </application>
 
 </manifest>
