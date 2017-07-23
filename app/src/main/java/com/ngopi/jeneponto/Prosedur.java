@@ -73,7 +73,6 @@ public class Prosedur extends AppCompatActivity {
         adapter = new AdapterProsedur(Prosedur.this, listIzin);
         spinnerIzin.setAdapter((SpinnerAdapter) adapter);
 
-        
         callData();
     }
 

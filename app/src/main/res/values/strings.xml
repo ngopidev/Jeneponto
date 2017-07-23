@@ -10,5 +10,22 @@
     <string name="headOffice"><b>Head Office</b>\nAlamat Kabupaten Jeneponto\n<b>Phone</b> : nomor telephone\n<b>Fax</b> : nomor Fax</string>
     <string name="OfficeHours"><b>Office Hours(GMT +7)</b>\nMonday - Thursday : dari jam berapa sampai jam berapa\nFriday : dari jam berapa sampai jam berapa\nSaturday, Sunday : Closed</string>
     <string name="OfficeHours2"><b>Licensing and Non Licensing\nService Hours(GMT +7)</b>\nMonday - Thursday : dari jam berapa sampai jam berapa\nFriday : dari jam berapa sampai jam berapa\nSaturday, Sunday : Closed</string>
+    <string name="textIzin">Pilih Perizinan :</string>
+    
+    <string-array name="izin_pertama">
+        <item>Perpanjangan Izin Memperkerjakan Tenaga Kerja Asing</item>
+        <item>Izin Mendirikan Bangunan</item>
+        <item>Izin Usaha Perikanan</item>
+    </string-array>
+
+    <string-array name="sub_izin">
+        <item>Retribusi pembangunan gedung baru</item>
+        <item>Retribusi rehabilitasi/renovasi bangunan gedung</item>
+        <item>Retribusi pembangunan bukan gedung baru atau prasarana bangunan gedung</item>
+        <item>Retribusi rehabilitasi prasarana bangunan gedung</item>
+    </string-array>
+    
+    <string-array name="sub_izin2"><item></item></string-array>
+
 </resources>
 

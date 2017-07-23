@@ -32,6 +32,12 @@
         <activity android:name=".Bahasa"
             android:label="Jeneponto"
             android:theme="@style/AppTheme"/>
+        <activity android:name=".Prosedur"
+            android:label="Jeneponto"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".Kalkulator"
+            android:label="Jeneponto"
+            android:theme="@style/AppTheme" />
     </application>
 
 </manifest>

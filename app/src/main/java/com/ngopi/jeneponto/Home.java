@@ -153,20 +153,25 @@ public class Home extends AppCompatActivity
 
 //            this one for navigate beranda
         if (id == R.id.beranda) {
-
+            Intent iHome = new Intent(getApplicationContext(), Home.class);
+            startActivity(iHome);
+            drawerLayout.closeDrawers();
         } else if (id == R.id.wisata) {
             Sdialog();
         } else if (id == R.id.peluang) {
 
         } else if (id == R.id.prosedur) {
-
+//            Intent ipros = new Intent(getApplicationContext(), Prosedur.class);
+//            startActivity(ipros);
         } else if (id == R.id.tracking) {
             Sdialog();
         } else if (id == R.id.kalkulator) {
-
+            Intent ikalk = new Intent(getApplicationContext(), Kalkulator.class);
+            startActivity(ikalk);
+            drawerLayout.closeDrawers();
         } else if (id == R.id.keluhan) {
 
-        } else if (id == R.id.hubungi) {
+        } else if (id == R.id.contact) {
 
             if (R.id.FContent == R.layout.layout_contact) {
                     //do Nothing

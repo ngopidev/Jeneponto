@@ -9,4 +9,84 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.ngopi.jeneponto.Kalkulator">
 
+        <TextView
+            android:id="@+id/textIzin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/textIzin"
+            android:textSize="20dp"/>
+
+        <Spinner
+            android:id="@+id/izin_pertama"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textIzin">
+        </Spinner>
+
+        <Spinner
+            android:id="@+id/sub_izin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/izin_pertama">
+        </Spinner>
+
+    <LinearLayout
+        android:id="@+id/LLajah"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/sub_izin">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="30px"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/editText" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="30px"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/editText2" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="30px"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/editText3" />
+        <Spinner
+            android:id="@+id/sub_Imb"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </Spinner>
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/asing"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/LLajah"
+        android:inputType="number"/>
+
+    <Button
+        android:id="@+id/button_hitung"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/asing"
+        />
+
+    <TextView
+        android:id="@+id/hasil_hitung"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_marginLeft="30dp"
+        android:layout_below="@id/asing"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@id/button_hitung"
+        android:background="@android:color/white"
+        />
+
 </RelativeLayout>
