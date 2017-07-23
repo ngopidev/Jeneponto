@@ -1,41 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.ngopi.jeneponto">
-    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
-        android:name=".app.AppController"
         android:allowBackup="true"
-        android:banner="@drawable/jeneponto2"
-        android:icon="@mipmap/ic_launcher"
-        android:label="Jeneponto"
-        android:logo="@drawable/jeneponto2"
+        android:banner="@drawable/jeneponto"
+        android:icon="@drawable/jeneponto"
+        android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity
-            android:name=".Home"
+        <!--this for splash screen-->
+        <activity android:name=".SplashScreen"
             android:label="Jeneponto"
-            android:theme="@style/AppTheme">
+            android:theme="@style/AppTheme.NoActionBar"
+
+            >
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".Wisata" />
-
-        <activity android:name=".Peluang" />
-
-        <activity android:name=".Prosedur" />
-
-        <activity android:name=".Tracking" />
-
-        <activity android:name=".Kalkulator" />
-
-        <activity android:name=".Keluhan" />
-
-        <activity android:name=".Hubungi" />
-
+    <activity
+        android:name=".Home"
+        android:label="Jeneponto"
+        android:theme="@style/AppTheme"/>
+        <activity android:name=".Contact"
+            android:label="Jeneponto"
+            android:theme="@style/AppTheme"/>
+        <activity android:name=".Bahasa"
+            android:label="Jeneponto"
+            android:theme="@style/AppTheme"/>
     </application>
 
 </manifest>

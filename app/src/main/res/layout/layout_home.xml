@@ -20,6 +20,8 @@
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/nav_header_home"
-        app:menu="@menu/layout_home_drawer" />
+        app:menu="@menu/layout_home_drawer"
+        android:background="@color/greenHard"
+        app:itemTextColor="@color/yellowLight"/>
 
 </android.support.v4.widget.DrawerLayout>
