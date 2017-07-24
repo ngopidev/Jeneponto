@@ -10,22 +10,46 @@
     <string name="headOffice"><b>Head Office</b>\nAlamat Kabupaten Jeneponto\n<b>Phone</b> : nomor telephone\n<b>Fax</b> : nomor Fax</string>
     <string name="OfficeHours"><b>Office Hours(GMT +7)</b>\nMonday - Thursday : dari jam berapa sampai jam berapa\nFriday : dari jam berapa sampai jam berapa\nSaturday, Sunday : Closed</string>
     <string name="OfficeHours2"><b>Licensing and Non Licensing\nService Hours(GMT +7)</b>\nMonday - Thursday : dari jam berapa sampai jam berapa\nFriday : dari jam berapa sampai jam berapa\nSaturday, Sunday : Closed</string>
-    <string name="textIzin">Pilih Perizinan :</string>
-    
+    <string name="text_izin">Pilih Perizinan :</string>
+    <string name="text_tenaga_kerja">Jumlah Tenaga Kerja :</string>
+    <string name="ket_tenaga_kerja">Perhitungan Retribusi = USD 100 x jumlah jabatan tenaga kerja</string>
+    <string name="ket_gedung_baru">L x It x 1.00 x HSbg</string>
+    <string name="ket_renovasi_gedung">L x It x Tk x HSbg</string>
+    <string name="ket_bukan_gedung_baru">V x I x 1.00 x HSbg</string>
+    <string name="ket_rehabilitasi_prasarana">V x I x Tk x HSbg</string>
+    <string name="ket_L">L = Luas lantai bangunan gedung</string>
+    <string name="ket_V">V = Volume/besaran (dalam satuan m2, m, dan unit)</string>
+    <string name="ket_I">I = Indeks </string>
+    <string name="ket_It">It = Indeks terintegrasi</string>
+    <string name="ket_Tk">Tk = Tingkat kerusakan (0.45 untuk tingkat kerusakan sedang, 0.65 untuk tingkat kerusakan berat)</string>
+    <string name="ket_1">1.00 = Indeks pembangunan baru </string>
+    <string name="ket_HSbg">HSbg = Harga satuan retribusi bangunan gedung (hanya 1 tarif setiap kabupaten)</string>
+    <string name="haha">15dp</string>
+    <string-array name="HSbg">
+        <item>Pilih Jenis Bangunan</item>
+        <item>Bangunan gedung tidak bertingkat sederhana (Rp. 6000 permeter persegi)</item>
+        <item>Bangunan gedung tidak bertingkat (Rp. 12.000 permeter persegi)</item>
+        <item>Bangunan gedung bertingkat (Rp. 18.000 permeter persegi)</item>
+    </string-array>
+
     <string-array name="izin_pertama">
-        <item>Perpanjangan Izin Memperkerjakan Tenaga Kerja Asing</item>
+        <item>Pilih Jenis Izin</item>
+        <item>Perpanjangan Izin\n Memperkerjakan Tenaga Kerja Asing</item>
         <item>Izin Mendirikan Bangunan</item>
         <item>Izin Usaha Perikanan</item>
     </string-array>
 
-    <string-array name="sub_izin">
+    <string-array name="izin_imb">
+        <item>Pilih Jenis Retribusi</item>
         <item>Retribusi pembangunan gedung baru</item>
         <item>Retribusi rehabilitasi/renovasi bangunan gedung</item>
         <item>Retribusi pembangunan bukan gedung baru atau prasarana bangunan gedung</item>
         <item>Retribusi rehabilitasi prasarana bangunan gedung</item>
     </string-array>
     
-    <string-array name="sub_izin2"><item></item></string-array>
+    <string-array name="sub_izin2">
+        <item></item>
+    </string-array>
 
 </resources>
 

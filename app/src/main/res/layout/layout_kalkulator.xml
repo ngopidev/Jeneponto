@@ -1,81 +1,136 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+    android:layout_width="wrap_content"
+    >
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:context="com.ngopi.jeneponto.Kalkulator"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.ngopi.jeneponto.Kalkulator">
+    android:paddingTop="@dimen/activity_vertical_margin">
 
         <TextView
             android:id="@+id/textIzin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/textIzin"
+            android:text="@string/text_izin"
             android:textSize="20dp"/>
 
         <Spinner
             android:id="@+id/izin_pertama"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/textIzin">
-        </Spinner>
-
-        <Spinner
-            android:id="@+id/sub_izin"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/izin_pertama">
+            android:layout_below="@id/textIzin"
+            android:entries="@array/izin_pertama"
+            android:scrollbarSize="100dp">
         </Spinner>
 
     <LinearLayout
-        android:id="@+id/LLajah"
+        android:id="@+id/linear_asing"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/izin_pertama"
+        android:visibility="gone"
+        android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/text_tenaga_kerja"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_tenaga_kerja"
+        android:layout_below="@id/izin_pertama"
+        android:textSize="20dp"/>
+
+    <EditText
+        android:id="@+id/jumlah_tenaga_kerja"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/izin_pertama"
+        android:background="@android:color/white"
+        android:layout_marginLeft="30dp"
+        android:textSize="20dp"
+        android:inputType="number"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear_imb"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@id/sub_izin">
+        android:layout_below="@id/izin_pertama"
+        android:visibility="gone">
+
+        <Spinner
+            android:id="@+id/menu_imb"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/izin_imb"
+            android:background="@android:color/white">
+        </Spinner>
+
+        <TextView
+            android:id="@+id/text_L_V"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:textSize="15dp"/>
 
         <EditText
+            android:id="@+id/input_L_V"
             android:layout_width="match_parent"
-            android:layout_height="30px"
+            android:layout_height="20dp"
             android:inputType="number"
-            android:ems="10"
-            android:id="@+id/editText" />
+            android:background="@android:color/white"
+            android:textSize="20dp"/>
+
+        <TextView
+            android:id="@+id/text_It_I"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:textSize="15dp"/>
+
         <EditText
+            android:id="@+id/input_It_I"
             android:layout_width="match_parent"
-            android:layout_height="30px"
+            android:layout_height="20dp"
             android:inputType="number"
-            android:ems="10"
-            android:id="@+id/editText2" />
+            android:background="@android:color/white"
+            android:textSize="20dp"/>
+
+        <TextView
+            android:id="@+id/text_100"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:textSize="20dp"/>
+
         <EditText
+            android:id="@+id/input_Tk"
             android:layout_width="match_parent"
-            android:layout_height="30px"
-            android:inputType="number"
-            android:ems="10"
-            android:id="@+id/editText3" />
+            android:layout_height="match_parent"
+            android:visibility="gone"/>
+
         <Spinner
-            android:id="@+id/sub_Imb"
+            android:id="@+id/HSbg"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:entries="@array/HSbg"
+            >
         </Spinner>
     </LinearLayout>
-
-    <EditText
-        android:id="@+id/asing"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/LLajah"
-        android:inputType="number"/>
 
     <Button
         android:id="@+id/button_hitung"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/asing"
+        android:layout_below="@id/linear_asing"
+        android:text="HASIL"
+        android:textSize="20dp"
+        android:layout_marginTop="253dp"
         />
 
     <TextView
@@ -83,10 +138,85 @@
         android:layout_width="match_parent"
         android:layout_height="35dp"
         android:layout_marginLeft="30dp"
-        android:layout_below="@id/asing"
-        android:layout_marginTop="10dp"
+        android:layout_below="@id/linear_asing"
+        android:layout_marginTop="263dp"
         android:layout_toRightOf="@id/button_hitung"
         android:background="@android:color/white"
         />
 
+    <TextView
+        android:id="@+id/ket_tenaga_kerja"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/button_hitung"
+        android:paddingTop="30dp"
+        android:text="@string/ket_tenaga_kerja"
+        android:textSize="15dp"
+        android:visibility="gone"/>
+
+<LinearLayout
+    android:id="@+id/ket_imb"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_below="@id/button_hitung"
+    android:visibility="gone">
+
+    <TextView
+        android:id="@+id/ket_l"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/button_hitung"
+        android:text="@string/ket_L"
+        android:textSize="15dp"/>
+
+    <TextView
+        android:id="@+id/ket_V"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/button_hitung"
+        android:text="@string/ket_V"
+        android:textSize="15dp"/>
+
+    <TextView
+        android:id="@+id/ket_I"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/button_hitung"
+        android:text="@string/ket_I"
+        android:textSize="15dp"/>
+
+    <TextView
+        android:id="@+id/ket_It"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/button_hitung"
+        android:text="@string/ket_It"
+        android:textSize="15dp"/>
+
+    <TextView
+        android:id="@+id/ket_Tk"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/button_hitung"
+        android:text="@string/ket_Tk"
+        android:textSize="15dp"/>
+
+    <TextView
+        android:id="@+id/ket_1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/button_hitung"
+        android:text="@string/ket_1"
+        android:textSize="15dp"/>
+
+    <TextView
+        android:id="@+id/ket_HSbg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/button_hitung"
+        android:text="@string/ket_HSbg"
+        android:textSize="15dp"/>
+    </LinearLayout>
 </RelativeLayout>
+</ScrollView>
