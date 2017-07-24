@@ -23,6 +23,8 @@ public class Contact extends Home{
     @Override
     public void onBackPressed() {
         super.onBackPressed2();
+        onStop();
     }
+
 
 }

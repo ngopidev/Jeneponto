@@ -4,39 +4,39 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/beranda"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/beranda"
             android:title="Beranda" />
         <item
             android:id="@+id/wisata"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/wisata"
             android:title="Wisata ke Jeneponto" />
         <item
             android:id="@+id/peluang"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/investasi"
             android:title="Peluang Investasi" />
         <item
             android:id="@+id/prosedur"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/prosedur"
             android:title="Prosedur Perizinan" />
         <item
             android:id="@+id/tracking"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/tracking"
             android:title="Tracking Perizinan" />
         <item
             android:id="@+id/kalkulator"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/kalkulator"
             android:title="Kalkulator Retribusi" />
         <item
             android:id="@+id/keluhan"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/keluhan"
             android:title="Keluhan Warga" />
         <item
             android:id="@+id/hubungi"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/hubungi"
             android:title="Hubungi Kami" />
         <item
             android:id="@+id/bahasa"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/bahasa"
             android:title="Pengaturan Bahasa" />
     </group>
 
