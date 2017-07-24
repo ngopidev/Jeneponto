@@ -300,6 +300,8 @@ public class Kalkulator extends Home {
                                                 //menutup view yang tidak diperlukan
                                                 ketRumputRakit.setVisibility(View.GONE);
                                                 rumusRumputRakit.setVisibility(View.GONE);
+                                                ketRumputLongline.setVisibility(View.GONE);
+                                                rumusRumputLongline.setVisibility(View.GONE);
 
                                                 //membuka view yang diperlukan
                                                 ketRumputLepas.setVisibility(View.VISIBLE);
