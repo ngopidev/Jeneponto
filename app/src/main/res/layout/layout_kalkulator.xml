@@ -70,8 +70,7 @@
             android:id="@+id/menu_imb"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:entries="@array/izin_imb"
-            android:background="@android:color/white">
+            android:entries="@array/izin_imb">
         </Spinner>
 
         <TextView
