@@ -159,10 +159,11 @@ public class Home extends AppCompatActivity
         } else if (id == R.id.wisata) {
             Sdialog();
         } else if (id == R.id.peluang) {
-
+            Sdialog();
         } else if (id == R.id.prosedur) {
 //            Intent ipros = new Intent(getApplicationContext(), Prosedur.class);
 //            startActivity(ipros);
+            Sdialog();
         } else if (id == R.id.tracking) {
             Sdialog();
         } else if (id == R.id.kalkulator) {
@@ -170,7 +171,7 @@ public class Home extends AppCompatActivity
             startActivity(ikalk);
             drawerLayout.closeDrawers();
         } else if (id == R.id.keluhan) {
-
+            Sdialog();
         } else if (id == R.id.contact) {
 
             if (R.id.FContent == R.layout.layout_contact) {

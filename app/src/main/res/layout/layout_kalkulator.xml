@@ -25,8 +25,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/textIzin"
-            android:entries="@array/izin_pertama"
-            android:scrollbarSize="100dp">
+            android:entries="@array/izin_pertama">
         </Spinner>
 
     <LinearLayout
@@ -77,7 +76,8 @@
             android:id="@+id/text_L_V"
             android:layout_width="wrap_content"
             android:layout_height="20dp"
-            android:textSize="15dp"/>
+            android:textSize="15dp"
+            android:text="L / V"/>
 
         <EditText
             android:id="@+id/input_L_V"
@@ -91,7 +91,8 @@
             android:id="@+id/text_It_I"
             android:layout_width="wrap_content"
             android:layout_height="20dp"
-            android:textSize="15dp"/>
+            android:textSize="15dp"
+            android:text="It / I"/>
 
         <EditText
             android:id="@+id/input_It_I"
@@ -102,16 +103,16 @@
             android:textSize="20dp"/>
 
         <TextView
-            android:id="@+id/text_100"
+            android:id="@+id/text_100_Tk"
             android:layout_width="match_parent"
             android:layout_height="20dp"
-            android:textSize="20dp"/>
+            android:textSize="15dp"
+            android:text="1.00 / Tk"/>
 
         <EditText
             android:id="@+id/input_Tk"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:visibility="gone"/>
+            android:layout_height="match_parent"/>
 
         <Spinner
             android:id="@+id/HSbg"
@@ -216,6 +217,200 @@
         android:layout_below="@id/button_hitung"
         android:text="@string/ket_HSbg"
         android:textSize="15dp"/>
+    </LinearLayout>
+
+    <Spinner
+        android:id="@+id/spin_jenis_perikanan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/izin_pertama"
+        android:entries="@array/jenis_perikanan"
+        android:visibility="gone">
+    </Spinner>
+
+    <Spinner
+        android:id="@+id/spin_perikanan_tawar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/spin_jenis_perikanan"
+        android:entries="@array/perikanan_tawar"
+        android:visibility="gone">
+    </Spinner>
+
+    <Spinner
+        android:id="@+id/spin_perikanan_payau"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/spin_jenis_perikanan"
+        android:entries="@array/perikanan_payau"
+        android:visibility="gone">
+    </Spinner>
+
+    <Spinner
+        android:id="@+id/spin_rumput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/spin_perikanan_payau"
+        android:entries="@array/rumput_laut"
+        android:visibility="gone">
+    </Spinner>
+
+    <Spinner
+        android:id="@+id/spin_kerang_hijau"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/spin_perikanan_payau"
+        android:entries="@array/kerang_hijau"
+        android:visibility="gone">
+    </Spinner>
+
+    <Spinner
+        android:id="@+id/spin_penangkapan_ikan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/spin_jenis_perikanan"
+        android:entries="@array/penangkapan_ikan"
+        android:visibility="gone">
+    </Spinner>
+
+
+    <LinearLayout
+        android:id="@+id/ket_perikanan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/button_hitung"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/ket_tawar1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ket_tawar1"
+            android:visibility="gone"/>
+        <TextView
+            android:id="@+id/rumus_tawar1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/rumus_tawar1"
+            android:visibility="gone"/>
+        <TextView
+            android:id="@+id/ket_tawar2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ket_tawar2"
+            android:visibility="gone"/>
+        <TextView
+            android:id="@+id/rumus_tawar2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/rumus_tawar2"
+            android:visibility="gone"/>
+        <TextView
+            android:id="@+id/ket_tawar3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ket_tawar3"
+            android:visibility="gone"/>
+        <TextView
+            android:id="@+id/rumus_tawar3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/rumus_tawar3"
+            android:visibility="gone"/>
+        <TextView
+            android:id="@+id/ket_tawar4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ket_tawar4"
+            android:visibility="gone"/>
+        <TextView
+            android:id="@+id/rumus_tawar4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/rumus_tawar4"
+            android:visibility="gone"/>
+        <TextView
+            android:id="@+id/ket_payau1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ket_payau1"
+            android:visibility="gone"/>
+        <TextView
+            android:id="@+id/rumus_payau1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/rumus_payau1"
+            android:visibility="gone"/>
+        <TextView
+            android:id="@+id/ket_payau2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ket_payau2"
+            android:visibility="gone"/>
+        <TextView
+            android:id="@+id/rumus_payau2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/rumus_payau2"
+            android:visibility="gone"/>
+        <TextView
+            android:id="@+id/ket_rumput_lepas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ket_rumput_lepas"
+            android:visibility="gone"/>
+        <TextView
+            android:id="@+id/rumus_rumput_lepas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/rumus_rumput_lepas"
+            android:visibility="gone"/>
+        <TextView
+            android:id="@+id/ket_rumput_rakit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/rumus_rumput_rakit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/rumus_rumput_rakit"
+            android:visibility="gone"/>
+        <TextView
+            android:id="@+id/ket_rumput_longline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ket_rumput_longline"
+            android:visibility="gone"/>
+        <TextView
+            android:id="@+id/rumus_rumput_longline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/rumus_rumput_longline"
+            android:visibility="gone"/>
+        <TextView
+            android:id="@+id/ket_kerang_rakit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ket_kerang_rakit"
+            android:visibility="gone"/>
+        <TextView
+            android:id="@+id/rumus_kerang_rakit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/rumus_kerang_rakit"
+            android:visibility="gone"/>
+        <TextView
+            android:id="@+id/ket_kerang_longline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ket_kerang_longline"
+            android:visibility="gone"/>
+        <TextView
+            android:id="@+id/rumus_kerang_longline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/rumus_kerang_longline"
+            android:visibility="gone"/>
     </LinearLayout>
 </RelativeLayout>
 </ScrollView>

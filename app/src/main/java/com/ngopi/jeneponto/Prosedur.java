@@ -45,7 +45,7 @@ public class Prosedur extends AppCompatActivity {
     Adapter adapter;
     List<DataProsedur> listIzin = new ArrayList<DataProsedur>();
 
-    public static final String url = "http://10.0.2.2/prosedur/db_config.php";
+    public static final String url = "http://192.168.43.198/prosedur/db_config.php";
     private static final String TAG = Prosedur.class.getSimpleName();
     public static final String TAG_ID = "id";
     public static final String TAG_IZIN = "izin";
