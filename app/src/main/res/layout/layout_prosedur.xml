@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.ngopi.jeneponto.Prosedur">
+
+    <TextView
+        android:id="@+id/pilih_izin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Pilih Jenis Izin"
+        android:textSize="20dp"
+        />
+
+    <Spinner
+        android:id="@+id/jenis_izin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/pilih_izin"
+        android:scrollbarSize="20dp"
+        >
+    </Spinner>
+
+    <TextView
+        android:id="@+id/textPersyaratan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/jenis_izin"
+        android:text="Persyaratan:"
+        android:textSize="20dp"
+        />
+
+    <TextView
+        android:id="@+id/persyaratan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textPersyaratan"
+        android:textSize="20dp"
+        />
+
+    <TextView
+        android:id="@+id/textLama"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lama Proses: "
+        android:textSize="20dp"
+        android:layout_below="@id/persyaratan"
+        />
+
+    <TextView
+        android:id="@+id/lama_proses"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textLama"
+        android:textSize="20dp"
+        />
+
+    <TextView
+        android:id="@+id/textBiaya"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Biaya: "
+        android:textSize="20dp"
+        android:layout_below="@id/lama_proses"
+        />
+
+    <TextView
+        android:id="@+id/biaya"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textBiaya"
+        android:textSize="20dp"/>
+
+    <TextView
+        android:id="@+id/textJangkaWaktu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Jangka Waktu Izin: "
+        android:textSize="20dp"
+        android:layout_below="@id/biaya"
+        />
+
+    <TextView
+        android:id="@+id/jangkaWaktu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/jangkaWaktu"
+        android:textSize="20dp"/>
+</RelativeLayout>
