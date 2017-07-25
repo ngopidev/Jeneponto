@@ -24,7 +24,6 @@ import android.view.MenuItem;
 public class Home extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-        
 //    this method for showing the dialog
     public void Sdialog() {
         AlertDialog mDialog = new AlertDialog.Builder(this)
