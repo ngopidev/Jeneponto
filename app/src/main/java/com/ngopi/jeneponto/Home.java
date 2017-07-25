@@ -26,6 +26,7 @@ import android.widget.PopupMenu;
 public class Home extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+        
 //    this method for showing the dialog
     public void Sdialog() {
         AlertDialog mDialog = new AlertDialog.Builder(this)
@@ -161,18 +162,23 @@ public class Home extends AppCompatActivity
         } else if (id == R.id.wisata) {
             Sdialog();
         } else if (id == R.id.peluang) {
-
+            Sdialog();
         } else if (id == R.id.prosedur) {
-
+//            Intent ipros = new Intent(getApplicationContext(), Prosedur.class);
+//            startActivity(ipros);
+            Sdialog();
         } else if (id == R.id.tracking) {
             Sdialog();
         } else if (id == R.id.kalkulator) {
-
+            Intent ikalk = new Intent(getApplicationContext(), Kalkulator.class);
+            startActivity(ikalk);
+            drawerLayout.closeDrawers();
         } else if (id == R.id.keluhan) {
-
+            Sdialog();
         } else if (id == R.id.hubungi) {
+
             if (R.id.FContent == R.layout.layout_contact) {
-                    //do Nothing
+                //do Nothing
             }else{
                 Intent anIntent = new Intent(getApplicationContext(), Contact.class);
                 anIntent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
@@ -180,7 +186,7 @@ public class Home extends AppCompatActivity
                 drawerLayout.closeDrawers();
             }
         } else if (id == R.id.bahasa) {
-          Sdialog();
+            Sdialog();
         }
 
         DrawerLayout drawer = drawerLayout;
