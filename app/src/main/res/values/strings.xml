@@ -12,18 +12,14 @@
     <string name="OfficeHours2"><b>Licensing and Non Licensing\nService Hours(GMT +7)</b>\nMonday - Thursday : dari jam berapa sampai jam berapa\nFriday : dari jam berapa sampai jam berapa\nSaturday, Sunday : Closed</string>
     <string name="text_izin">Pilih Perizinan :</string>
     <string name="text_tenaga_kerja">Jumlah Tenaga Kerja :</string>
-    <string name="ket_tenaga_kerja">Perhitungan Retribusi = USD 100 x jumlah jabatan tenaga kerja</string>
+    <string name="ket_tenaga_kerja">Perhitungan Retribusi :\nUSD 100 x jumlah jabatan tenaga kerja</string>
     <string name="ket_gedung_baru">L x It x 1.00 x HSbg</string>
     <string name="ket_renovasi_gedung">L x It x Tk x HSbg</string>
     <string name="ket_bukan_gedung_baru">V x I x 1.00 x HSbg</string>
     <string name="ket_rehabilitasi_prasarana">V x I x Tk x HSbg</string>
-    <string name="ket_L">L = Luas lantai bangunan gedung</string>
-    <string name="ket_V">V = Volume/besaran (dalam satuan m2, m, dan unit)</string>
-    <string name="ket_I">I = Indeks </string>
-    <string name="ket_It">It = Indeks terintegrasi</string>
-    <string name="ket_Tk">Tk = Tingkat kerusakan (0.45 untuk tingkat kerusakan sedang, 0.65 untuk tingkat kerusakan berat)</string>
-    <string name="ket_1">1.00 = Indeks pembangunan baru </string>
-    <string name="ket_HSbg">HSbg = Harga satuan retribusi bangunan gedung (hanya 1 tarif setiap kabupaten)</string>
+    <string name="ket_imb">
+        L = Luas lantai bangunan gedung\nV = Volume/besaran (dalam satuan m2, m, dan unit)\nI = Indeks\nIt = Indeks terintegrasi\nTk = Tingkat kerusakan (0.45 untuk tingkat kerusakan sedang, 0.65 untuk tingkat kerusakan berat)\n1.00 = Indeks pembangunan baru\nHSbg = Harga satuan retribusi bangunan gedung (hanya 1 tarif setiap kabupaten)
+    </string>
 
 
     <string-array name="izin_pertama">
