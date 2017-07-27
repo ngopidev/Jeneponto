@@ -1,10 +1,12 @@
 package com.ngopi.jeneponto;
 
+import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutCompat;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -14,8 +16,10 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
+import java.util.StringTokenizer;
 
 public class Kalkulator extends Home {
 
@@ -29,22 +33,25 @@ public class Kalkulator extends Home {
 
         //deklarasi view utama di activity kalkulator
         izinPertama = (Spinner) findViewById(R.id.izin_pertama);
-        final Button hasil = (Button) findViewById(R.id.button_hitung);
-        final TextView hasil_hitung = (TextView) findViewById(R.id.hasil_hitung);
+        final Button tombolHasil = (Button) findViewById(R.id.button_hitung);
+        final TextView hasilHitung = (TextView) findViewById(R.id.hasil_hitung);
+        final TextView keterangan = (TextView) findViewById(R.id.keterangan);
 
         //deklarasi ketika memilih perpanjangan izin tenaga kerja asing
         final LinearLayout llpertama = (LinearLayout) findViewById(R.id.linear_asing);
         final EditText tenagaKerja = (EditText) findViewById(R.id.jumlah_tenaga_kerja);
-        //final double jumlahTenagaKerja = Double.parseDouble(String.valueOf(tenagaKerja.getText()));
         final TextView ketTenagaKerja = (TextView) findViewById(R.id.ket_tenaga_kerja);
+        final TextView usd = (TextView) findViewById(R.id.textUSD);
 
         //deklarasi ketika memilih izin mendirikan bangunan
         final LinearLayout llkedua = (LinearLayout) findViewById(R.id.linear_imb);
         final Spinner menuIMB = (Spinner) findViewById(R.id.menu_imb);
         final TextView lv = (TextView) findViewById(R.id.text_L_V);
         final TextView ItI = (TextView) findViewById(R.id.text_It_I);
-        final TextView indeks = (TextView) findViewById(R.id.text_100_Tk);
-        final EditText tk = (EditText) findViewById(R.id.input_Tk);
+        final TextView indeks = (TextView) findViewById(R.id.text_index);
+        final EditText inputLV = (EditText) findViewById(R.id.input_L_V);
+        final EditText inputItI = (EditText) findViewById(R.id.input_It_I);
+        final Spinner spinTk = (Spinner) findViewById(R.id.spin_Tk);
         final Spinner spinHsbg = (Spinner) findViewById(R.id.HSbg);
 
         //deklarasi ketika memilih izin usaha perikanan
@@ -81,19 +88,139 @@ public class Kalkulator extends Home {
                     //membuka view yang diperlukan
                     llpertama.setVisibility(View.VISIBLE);
                     ketTenagaKerja.setVisibility(View.VISIBLE);
-                }
-                else if (pilihIzin.equals("Izin Mendirikan Bangunan")){
+
+                    usd.setVisibility(View.VISIBLE);
+
+
+                    tombolHasil.setOnClickListener(new View.OnClickListener(){
+                        @Override
+                        public void onClick(View v) {
+                            String hitungAsing = tenagaKerja.getText().toString();
+                            int a = Integer.parseInt(hitungAsing);
+                            int b = 100;
+                            String hasilA = String.valueOf(a * b);
+                            hasilHitung.setText(hasilA);
+                        }
+                    });
+                    }
+                else if (pilihIzin.equals("Izin Mendirikan Bangunan")) {
                     //menutup view yang tidak diperlukan
                     llpertama.setVisibility(View.GONE);
                     ketTenagaKerja.setVisibility(View.GONE);
                     jenisPerikanan.setVisibility(View.GONE);
                     perikananTawar.setVisibility(View.GONE);
+                    hasilHitung.setText(null);
 
                     //membuka view yang diperlukan
                     llkedua.setVisibility(View.VISIBLE);
                     menuIMB.setVisibility(View.VISIBLE);
-                }
 
+                    keterangan.setText(R.string.ket_imb);
+
+                    menuIMB.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
+                        @Override
+                        public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+                            String pilihIMB = menuIMB.getSelectedItem().toString();
+                            if (pilihIMB.equals("Pilih Jenis Retribusi")) {
+                                lv.setText("");
+                                ItI.setText("");
+                                indeks.setText("");
+                            } else if (pilihIMB.equals("Retribusi pembangunan gedung baru")) {
+
+                                lv.setText("L");
+                                ItI.setText("It");
+                                indeks.setText("Indeks : 1.00");
+                                spinHsbg.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+
+                                    @Override
+                                    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                                        String pilihHsbg = spinHsbg.getSelectedItem().toString();
+                                        if (pilihHsbg.equals("Pilih Jenis Bangunan")) {
+                                            //menutup view yang tidak diperlukan
+                                        } else if (pilihHsbg.equals("Bangunan gedung tidak bertingkat sederhana (Rp. 6000 permeter persegi)")) {
+                                            //perkalian
+                                            tombolHasil.setOnClickListener(new View.OnClickListener() {
+
+                                                @Override
+                                                public void onClick(View v) {
+                                                    String strlv = inputLV.getText().toString();
+                                                    String strItI = inputItI.getText().toString();
+                                                    int lv = Integer.parseInt(strlv);
+                                                    int ItI = Integer.parseInt(strItI);
+
+                                                    String hasil = String.valueOf(lv * ItI * 1 * 6000);
+                                                    hasilHitung.setText(hasil);
+                                                    keterangan.setText(R.string.ket_gedung_baru);
+                                                }
+                                            });
+
+                                        } else if (pilihHsbg.equals("Bangunan gedung tidak bertingkat (Rp. 12.000 permeter persegi)")) {
+                                            //menutup view yang tidak diperlukan
+                                            indeks.setVisibility(View.GONE);
+
+                                            //membuka view yang diperlukan
+                                            lv.setText("L");
+                                            ItI.setText("It");
+                                            spinTk.setVisibility(View.VISIBLE);
+
+                                            spinTk.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                                                @Override
+                                                public void onItemSelected(AdapterView<?> parent, View view, int position, final long id) {
+                                                    String pilihTk = spinTk.getSelectedItem().toString();
+                                                    if (pilihTk.equals("Pilih tingkat kerusakan")){
+                                                        hasilHitung.setText("");
+
+                                                    }else if (pilihTk.equals("0.45")){
+                                                        tombolHasil.setOnClickListener(new View.OnClickListener() {
+
+                                                            @Override
+                                                            public void onClick(View v) {
+                                                                String strlv = inputLV.getText().toString();
+                                                                String strIti = inputItI.getText().toString();
+                                                                int lv = Integer.parseInt(strlv);
+                                                                int ItI = Integer.parseInt(strIti);
+
+                                                                if (inputLV.equals("") && inputItI.equals("")){
+                                                                    Toast.makeText(getApplicationContext(), "Harap isi bagian yang kosong", Toast.LENGTH_SHORT)
+                                                                            .show();
+                                                                }else {
+                                                                    String hasil = String.valueOf(lv * ItI * 0.45 * 12000);
+                                                                    hasilHitung.setText(hasil);
+                                                                    keterangan.setText(R.string.ket_renovasi_gedung);
+                                                                }
+                                                            }
+                                                        });
+
+                                                    }else if (pilihTk.equals("0.65")){
+
+                                                    }
+                                                }
+
+                                                @Override
+                                                public void onNothingSelected(AdapterView<?> parent) {
+
+                                                }
+                                            });
+                                        } else if (pilihHsbg.equals("Bangunan gedung bertingkat (Rp. 18.000 permeter persegi)")) {
+                                            //perkalian
+                                        }
+                                    }
+
+                                    @Override
+                                    public void onNothingSelected(AdapterView<?> parent) {
+
+                                    }
+                                });
+                            }
+                        }
+
+                        @Override
+                        public void onNothingSelected(AdapterView<?> parent) {
+
+                        }
+                    });
+                }
                 else if (pilihIzin.equals("Izin Usaha Perikanan")){
 
                     //menutup view yang tidak diperlukan
@@ -112,6 +239,10 @@ public class Kalkulator extends Home {
                         perikananTawar.setVisibility(View.GONE);
 
                     }else if (pilihPerikanan.equals("Ikan air tawar")){
+                        //menutup view yang tidak diperlukan
+                        perikananPayau.setVisibility(View.GONE);
+
+                        //membuka view yang diperlukan
                         perikananTawar.setVisibility(View.VISIBLE);
                         perikananTawar.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
                             @Override

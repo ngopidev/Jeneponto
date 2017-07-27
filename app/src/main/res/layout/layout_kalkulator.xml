@@ -77,42 +77,48 @@
             android:layout_width="wrap_content"
             android:layout_height="20dp"
             android:textSize="15dp"
-            android:text="L / V"/>
+            android:paddingLeft="10dp"/>
 
         <EditText
             android:id="@+id/input_L_V"
             android:layout_width="match_parent"
-            android:layout_height="20dp"
-            android:inputType="number"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
             android:background="@android:color/white"
-            android:textSize="20dp"/>
+            android:textSize="20dp"
+            android:paddingLeft="10dp"/>
 
         <TextView
             android:id="@+id/text_It_I"
             android:layout_width="wrap_content"
             android:layout_height="20dp"
             android:textSize="15dp"
-            android:text="It / I"/>
+            android:paddingLeft="10dp"/>
 
         <EditText
             android:id="@+id/input_It_I"
             android:layout_width="match_parent"
-            android:layout_height="20dp"
-            android:inputType="number"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
             android:background="@android:color/white"
-            android:textSize="20dp"/>
+            android:textSize="20dp"
+            android:paddingLeft="10dp"/>
 
         <TextView
-            android:id="@+id/text_100_Tk"
-            android:layout_width="match_parent"
-            android:layout_height="20dp"
-            android:textSize="15dp"
-            android:text="1.00 / Tk"/>
+            android:id="@+id/text_index"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Indeks = 1.00"
+            android:textSize="20dp"
+            android:visibility="gone"/>
 
-        <EditText
-            android:id="@+id/input_Tk"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+        <Spinner
+            android:id="@+id/spin_Tk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:entries="@array/Tk"
+            android:visibility="gone">
+        </Spinner>
 
         <Spinner
             android:id="@+id/HSbg"
@@ -137,11 +143,25 @@
         android:id="@+id/hasil_hitung"
         android:layout_width="match_parent"
         android:layout_height="35dp"
-        android:layout_marginLeft="30dp"
+        android:layout_marginLeft="10dp"
         android:layout_below="@id/linear_asing"
         android:layout_marginTop="263dp"
         android:layout_toRightOf="@id/button_hitung"
         android:background="@android:color/white"
+        android:textSize="25dp"
+        />
+
+    <TextView
+        android:id="@+id/textUSD"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/linear_asing"
+        android:text="USD"
+        android:textSize="35dp"
+        android:layout_toRightOf="@id/hasil_hitung"
+        android:layout_marginTop="260dp"
+        android:layout_marginLeft="15dp"
+        android:visibility="gone"
         />
 
     <TextView
@@ -213,6 +233,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/button_hitung"
+        android:paddingTop="20dp"
+        android:paddingLeft="10dp"
         android:textSize="15dp"/>
 </RelativeLayout>
 </ScrollView>
