@@ -182,7 +182,7 @@ public class Kalkulator extends Home {
                                                                 int ItI = Integer.parseInt(strIti);
 
                                                                 if (inputLV.equals("") && inputItI.equals("")){
-                                                                    Toast.makeText(getApplicationContext(), "Harap isi yang kosong", Toast.LENGTH_SHORT)
+                                                                    Toast.makeText(getApplicationContext(), "Harap isi bagian yang kosong", Toast.LENGTH_SHORT)
                                                                             .show();
                                                                 }else {
                                                                     String hasil = String.valueOf(lv * ItI * 0.45 * 12000);
