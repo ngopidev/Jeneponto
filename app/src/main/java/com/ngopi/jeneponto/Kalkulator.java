@@ -930,12 +930,24 @@ public class Kalkulator extends Home {
 
                                 }else if (pilihTawar.equals("Pembenihan ikan dengan luas 0,75 ha atau lebih")){
                                     //menutup view yang tidak diperlukan
+
+                                    //membuka view yang diperlukan
+
                                 }else if (pilihTawar.equals("Pembenihan ikan dengan luas 2 ha atau lebih")){
                                     //menutup view yang tidak diperlukan
+
+                                    //membuka view yang diperlukan
+
                                 }else if (pilihTawar.equals("Pembenihan ikan lebih dari 5 unit")){
                                     //menutup view yang tidak diperlukan
+
+                                    //membuka view yang diperlukan
+
                                 }else if (pilihTawar.equals("Usaha keramba jaring apung lebih dari 4 unit")){
                                     //menutup view yang tidak diperlukan
+
+                                    //membuka view yang diperlukan
+
                                 }
                             }
 
