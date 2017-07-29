@@ -72,19 +72,24 @@
         <item>Pembenihan ikan dengan luas 2 ha atau lebih</item>
         <item>Pembenihan ikan lebih dari 5 unit</item>
         <item>Usaha keramba jaring apung lebih dari 4 unit</item>
+        <item>Usaha keramba lebih dari 50 unit</item>
     </string-array>
 
-    <string name="ket_tawar1">Usaha pembenihan/pendederan ikan dengan luas 0,75 ha atau lebih</string>
-    <string name="rumus_tawar1">Rp 100.000 x luas lahan (dalam hectare)</string>
+    <string name="ket_tawar1">Usaha pembenihan/pendederan ikan dengan luas 0,75 ha atau lebih\n<b>Perhitungan : Rp 100.000 x luas lahan (dalam hectare)</b></string>
 
-    <string name="ket_tawar2">Usaha pembekalan di kolam air tenang dengan luas lahan 2 ha atau lebih</string>
-    <string name="rumus_tawar2">Rp 100.000 x luas lahan (dalam hectare)</string>
+    <string name="ket_tawar2">Usaha pembekalan di kolam air tenang dengan luas lahan 2 ha atau lebih\n<b>Perhitungan : Rp 100.000 x luas lahan (dalam hectare)</b></string>
 
-    <string name="ket_tawar3">Usaha pembekalan di kolam air deras lebih dari 5 unit, dengan ketentuan 1 unit = 100 m2</string>
-    <string name="rumus_tawar3">Rp 150 x luas unit (dalam meter persegi)</string>
+    <string name="ket_tawar3">Usaha pembekalan di kolam air deras lebih dari 5 unit, dengan ketentuan 1 unit = 100 m2<b>Perhitungan : Rp 150 x luas unit (dalam meter persegi)</b></string>
 
-    <string name="ket_tawar4">Usaha keramba jaring apung lebih dari 4 unit, dengan ketentuan 1 unit = (4x7x7x2,5 m3)</string>
-    <string name="rumus_tawar4">Rp 15.000 x luas unit (dalam meter persegi)</string>
+    <string name="ket_tawar4">Usaha keramba jaring apung lebih dari 4 unit, dengan ketentuan 1 unit = (4x7x7x2,5 m3)\n<b>Perhitungan : Rp 15.000 x luas unit (dalam meter persegi)</b></string>
+
+    <string name="ket_tawar5">Usaha keramba lebih dari 50 unit, dengan ketentuan 1 unit = 4x2x1.5 m3\n<b>Perhitungan : Rp 150 x luas unit (dalam meter persegi)</b></string>
+
+    <string name="luas_lahan">Luas Lahan : </string>
+    <string name="luas_unit">Luas Unit : </string>
+    <string name="luas_lepas_dasar">Luas Lepas Dasar : </string>
+    <string name="luas_longline">Luas Long Line : </string>
+    <string name="luas_usaha_rakit_apung">Luas Usaha Rakit Apung</string>
 
     <string-array name="perikanan_payau">
         <item>Pilih metode perikanan air payau</item>

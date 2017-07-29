@@ -110,6 +110,7 @@
             android:layout_height="wrap_content"
             android:text="Indeks = 1.00"
             android:textSize="20dp"
+            android:paddingTop="5dp"
             android:visibility="gone"/>
 
         <Spinner
@@ -227,6 +228,24 @@
         android:entries="@array/penangkapan_ikan"
         android:visibility="gone">
     </Spinner>
+
+    <LinearLayout
+        android:id="@+id/linear_ikan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/spin_rumput"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/text_luas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/input_luas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
 
     <TextView
         android:id="@+id/keterangan"

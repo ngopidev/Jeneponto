@@ -4,6 +4,7 @@ import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutCompat;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
@@ -95,6 +96,13 @@ public class Kalkulator extends Home {
                     tombolHasil.setOnClickListener(new View.OnClickListener(){
                         @Override
                         public void onClick(View v) {
+
+                            String tenagaKerjaNull = tenagaKerja.getText().toString();
+                            if(TextUtils.isEmpty(tenagaKerjaNull)) {
+                                tenagaKerja.setError("nilai tidak boleh kosong");
+                                return;
+                            }
+
                             String hitungAsing = tenagaKerja.getText().toString();
                             int a = Integer.parseInt(hitungAsing);
                             int b = 100;
@@ -123,31 +131,57 @@ public class Kalkulator extends Home {
 
                             String pilihIMB = menuIMB.getSelectedItem().toString();
                             if (pilihIMB.equals("Pilih Jenis Retribusi")) {
+                                //menghilangkan view yang tidak diperlukan
                                 lv.setText("");
+                                inputLV.setText("");
                                 ItI.setText("");
-                                indeks.setText("");
+                                inputItI.setText("");
+                                indeks.setVisibility(View.GONE);
+                                hasilHitung.setText("");
+                                spinTk.setVisibility(View.GONE);
+
+
                             } else if (pilihIMB.equals("Retribusi pembangunan gedung baru")) {
 
                                 lv.setText("L");
                                 ItI.setText("It");
-                                indeks.setText("Indeks : 1.00");
-                                spinHsbg.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                                indeks.setVisibility(View.VISIBLE);
+                                spinTk.setVisibility(View.GONE);
+                                hasilHitung.setText("");
 
+                                spinHsbg.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
                                     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                                         String pilihHsbg = spinHsbg.getSelectedItem().toString();
                                         if (pilihHsbg.equals("Pilih Jenis Bangunan")) {
                                             //menutup view yang tidak diperlukan
+                                            hasilHitung.setText("");
                                         } else if (pilihHsbg.equals("Bangunan gedung tidak bertingkat sederhana (Rp. 6000 permeter persegi)")) {
-                                            //perkalian
+                                            //menutup view yang tidak diperlukan
+                                            hasilHitung.setText("");
+
+                                            //membuka view yang diperlukan
                                             tombolHasil.setOnClickListener(new View.OnClickListener() {
 
                                                 @Override
                                                 public void onClick(View v) {
+
+                                                    String lvNull = inputLV.getText().toString();
+                                                    String ItINull = inputItI.getText().toString();
+
+                                                    if(TextUtils.isEmpty(lvNull)) {
+                                                        inputLV.setError("nilai tidak boleh kosong");
+                                                        return;
+                                                    }
+                                                    if (TextUtils.isEmpty(ItINull)){
+                                                        inputItI.setError("nilai tidak boleh kosong");
+                                                        return;
+                                                    }
+
                                                     String strlv = inputLV.getText().toString();
                                                     String strItI = inputItI.getText().toString();
-                                                    int lv = Integer.parseInt(strlv);
-                                                    int ItI = Integer.parseInt(strItI);
+                                                    double lv = Double.parseDouble(strlv);
+                                                    double ItI = Double.parseDouble(strItI);
 
                                                     String hasil = String.valueOf(lv * ItI * 1 * 6000);
                                                     hasilHitung.setText(hasil);
@@ -157,43 +191,204 @@ public class Kalkulator extends Home {
 
                                         } else if (pilihHsbg.equals("Bangunan gedung tidak bertingkat (Rp. 12.000 permeter persegi)")) {
                                             //menutup view yang tidak diperlukan
-                                            indeks.setVisibility(View.GONE);
+                                            hasilHitung.setText("");
 
                                             //membuka view yang diperlukan
-                                            lv.setText("L");
-                                            ItI.setText("It");
-                                            spinTk.setVisibility(View.VISIBLE);
+                                            tombolHasil.setOnClickListener(new View.OnClickListener() {
 
-                                            spinTk.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                                 @Override
-                                                public void onItemSelected(AdapterView<?> parent, View view, int position, final long id) {
-                                                    String pilihTk = spinTk.getSelectedItem().toString();
-                                                    if (pilihTk.equals("Pilih tingkat kerusakan")){
+                                                public void onClick(View v) {
+
+                                                    String lvNull = inputLV.getText().toString();
+                                                    String ItINull = inputItI.getText().toString();
+
+                                                    if(TextUtils.isEmpty(lvNull)) {
+                                                        inputLV.setError("nilai tidak boleh kosong");
+                                                        return;
+                                                    }
+                                                    if (TextUtils.isEmpty(ItINull)){
+                                                        inputItI.setError("nilai tidak boleh kosong");
+                                                        return;
+                                                    }
+
+                                                    String strlv = inputLV.getText().toString();
+                                                    String strItI = inputItI.getText().toString();
+                                                    double lv = Double.parseDouble(strlv);
+                                                    double ItI = Double.parseDouble(strItI);
+
+                                                    String hasil = String.valueOf(lv * ItI * 1 * 12000);
+                                                    hasilHitung.setText(hasil);
+                                                    keterangan.setText(R.string.ket_gedung_baru);
+                                                }
+                                            });
+
+                                        } else if (pilihHsbg.equals("Bangunan gedung bertingkat (Rp. 18.000 permeter persegi)")) {
+                                            //menutup view yang tidak diperlukan
+                                            hasilHitung.setText("");
+
+                                            //membuka view yang diperlukan
+                                            tombolHasil.setOnClickListener(new View.OnClickListener() {
+
+                                                @Override
+                                                public void onClick(View v) {
+
+                                                    String lvNull = inputLV.getText().toString();
+                                                    String ItINull = inputItI.getText().toString();
+
+                                                    if(TextUtils.isEmpty(lvNull)) {
+                                                        inputLV.setError("nilai tidak boleh kosong");
+                                                        return;
+                                                    }
+                                                    if (TextUtils.isEmpty(ItINull)){
+                                                        inputItI.setError("nilai tidak boleh kosong");
+                                                        return;
+                                                    }
+
+                                                    String strlv = inputLV.getText().toString();
+                                                    String strItI = inputItI.getText().toString();
+                                                    double lv = Double.parseDouble(strlv);
+                                                    double ItI = Double.parseDouble(strItI);
+
+                                                    String hasil = String.valueOf(lv * ItI * 1 * 18000);
+                                                    hasilHitung.setText(hasil);
+                                                    keterangan.setText(R.string.ket_gedung_baru);
+                                                }
+                                            });
+                                        }
+                                    }
+
+                                    @Override
+                                    public void onNothingSelected(AdapterView<?> parent) {
+
+                                    }
+                                });
+                            }else if (pilihIMB.equals("Retribusi rehabilitasi/renovasi bangunan gedung")){
+                                //menutup view yang tidak diperlukan
+                                lv.setText("L");
+                                inputLV.setText("");
+                                ItI.setText("It");
+                                inputItI.setText("");
+                                indeks.setVisibility(View.GONE);
+                                hasilHitung.setText("");
+
+                                //membuka view yang diperlukan
+                                spinTk.setVisibility(View.VISIBLE);
+
+                                spinTk.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                                    @Override
+                                    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                                        String pilihTk = spinTk.getSelectedItem().toString();
+                                        if (pilihTk.equals("Pilih tingkat kerusakan")){
+                                            hasilHitung.setText("");
+                                            inputLV.setText("");
+                                            inputItI.setText("");
+                                        }
+                                        else if (pilihTk.equals("0.45")){
+                                            //menutup view yang tidak diperlukan
+                                            hasilHitung.setText(null);
+
+                                            //membuka view yang diperlukan
+                                            spinHsbg.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                                                @Override
+                                                public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                                                    String pilihHsbg = spinHsbg.getSelectedItem().toString();
+
+                                                    if (pilihHsbg.equals("Pilih Jenis Bangunan")){
                                                         hasilHitung.setText("");
 
-                                                    }else if (pilihTk.equals("0.45")){
-                                                        tombolHasil.setOnClickListener(new View.OnClickListener() {
+                                                    }else if (pilihHsbg.equals("Bangunan gedung tidak bertingkat sederhana (Rp. 6000 permeter persegi)")){
+                                                        //menutup view yang tidak diperlukan
+                                                        hasilHitung.setText("");
 
+                                                        //membuka view yang diperlukan
+                                                        tombolHasil.setOnClickListener(new View.OnClickListener() {
                                                             @Override
                                                             public void onClick(View v) {
-                                                                String strlv = inputLV.getText().toString();
-                                                                String strIti = inputItI.getText().toString();
-                                                                int lv = Integer.parseInt(strlv);
-                                                                int ItI = Integer.parseInt(strIti);
 
-                                                                if (inputLV.equals("") && inputItI.equals("")){
-                                                                    Toast.makeText(getApplicationContext(), "Harap isi bagian yang kosong", Toast.LENGTH_SHORT)
-                                                                            .show();
-                                                                }else {
-                                                                    String hasil = String.valueOf(lv * ItI * 0.45 * 12000);
-                                                                    hasilHitung.setText(hasil);
-                                                                    keterangan.setText(R.string.ket_renovasi_gedung);
+                                                                String lvNull = inputLV.getText().toString();
+                                                                String ItINull = inputItI.getText().toString();
+
+                                                                if(TextUtils.isEmpty(lvNull)) {
+                                                                    inputLV.setError("nilai tidak boleh kosong");
+                                                                    return;
                                                                 }
+                                                                if (TextUtils.isEmpty(ItINull)){
+                                                                    inputItI.setError("nilai tidak boleh kosong");
+                                                                    return;
+                                                                }
+
+                                                                String strlv = inputLV.getText().toString();
+                                                                String strIt = inputItI.getText().toString();
+                                                                double lv = Double.parseDouble(strlv);
+                                                                double It = Double.parseDouble(strIt);
+
+                                                                String hasil = String.valueOf(lv * It * 0.45 * 6000);
+                                                                hasilHitung.setText(hasil);
+                                                                keterangan.setText(R.string.ket_renovasi_gedung);
+                                                            }
+                                                        });
+                                                    }else if (pilihHsbg.equals("Bangunan gedung tidak bertingkat (Rp. 12.000 permeter persegi)")){
+                                                        //menutup view yang tidak diperlukan
+                                                        hasilHitung.setText("");
+
+                                                        //membuka view yang diperlukan
+                                                        tombolHasil.setOnClickListener(new View.OnClickListener() {
+                                                            @Override
+                                                            public void onClick(View v) {
+
+                                                                String lvNull = inputLV.getText().toString();
+                                                                String ItINull = inputItI.getText().toString();
+
+                                                                if(TextUtils.isEmpty(lvNull)) {
+                                                                    inputLV.setError("nilai tidak boleh kosong");
+                                                                    return;
+                                                                }
+                                                                if (TextUtils.isEmpty(ItINull)){
+                                                                    inputItI.setError("nilai tidak boleh kosong");
+                                                                    return;
+                                                                }
+
+                                                                String strlv = inputLV.getText().toString();
+                                                                String strIt = inputItI.getText().toString();
+                                                                double lv = Double.parseDouble(strlv);
+                                                                double It = Double.parseDouble(strIt);
+
+                                                                String hasil = String.valueOf(lv * It * 0.45 * 12000);
+                                                                hasilHitung.setText(hasil);
+                                                                keterangan.setText(R.string.ket_renovasi_gedung);
                                                             }
                                                         });
 
-                                                    }else if (pilihTk.equals("0.65")){
+                                                    }else if (pilihHsbg.equals("Bangunan gedung bertingkat (Rp. 18.000 permeter persegi)")){
+                                                        //menutup view yang tidak diperlukan
+                                                        hasilHitung.setText("");
 
+                                                        //membuka view yang diperlukan
+                                                        tombolHasil.setOnClickListener(new View.OnClickListener() {
+                                                            @Override
+                                                            public void onClick(View v) {
+                                                                String lvNull = inputLV.getText().toString();
+                                                                String ItINull = inputItI.getText().toString();
+
+                                                                if(TextUtils.isEmpty(lvNull)) {
+                                                                    inputLV.setError("nilai tidak boleh kosong");
+                                                                    return;
+                                                                }
+                                                                if (TextUtils.isEmpty(ItINull)){
+                                                                    inputItI.setError("nilai tidak boleh kosong");
+                                                                    return;
+                                                                }
+
+                                                                String strlv = inputLV.getText().toString();
+                                                                String strIt = inputItI.getText().toString();
+                                                                double lv = Double.parseDouble(strlv);
+                                                                double It = Double.parseDouble(strIt);
+
+                                                                String hasil = String.valueOf(lv * It * 0.45 * 12000);
+                                                                hasilHitung.setText(hasil);
+                                                                keterangan.setText(R.string.ket_renovasi_gedung);
+                                                            }
+                                                        });
                                                     }
                                                 }
 
@@ -202,8 +397,488 @@ public class Kalkulator extends Home {
 
                                                 }
                                             });
+                                        }else if (pilihTk.equals("0.65")){
+                                            hasilHitung.setText(null);
+                                            spinHsbg.getSelectedItem().equals("Pilih Jenis Bangunan");
+
+                                            spinHsbg.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                                                @Override
+                                                public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                                                    final String pilihHsbg = spinHsbg.getSelectedItem().toString();
+
+                                                    if (pilihHsbg.equals("Pilih Jenis Bangunan")) {
+                                                        hasilHitung.setText("");
+
+                                                    } else if (pilihHsbg.equals("Bangunan gedung tidak bertingkat sederhana (Rp. 6000 permeter persegi)")) {
+                                                        //menutup view yang tidak diperlukan
+                                                        hasilHitung.setText("");
+
+                                                        //membuka view yang diperlukan
+                                                        tombolHasil.setOnClickListener(new View.OnClickListener() {
+                                                            @Override
+                                                            public void onClick(View v) {
+
+                                                                String lvNull = inputLV.getText().toString();
+                                                                String ItINull = inputItI.getText().toString();
+
+                                                                if(TextUtils.isEmpty(lvNull)) {
+                                                                    inputLV.setError("nilai tidak boleh kosong");
+                                                                    return;
+                                                                }
+                                                                if (TextUtils.isEmpty(ItINull)){
+                                                                    inputItI.setError("nilai tidak boleh kosong");
+                                                                    return;
+                                                                }
+
+                                                                String strlv = inputLV.getText().toString();
+                                                                String strIt = inputItI.getText().toString();
+                                                                double lv = Double.parseDouble(strlv);
+                                                                double It = Double.parseDouble(strIt);
+
+                                                                String hasil = String.valueOf(lv * It * 0.65 * 6000);
+                                                                hasilHitung.setText(hasil);
+                                                                keterangan.setText(R.string.ket_renovasi_gedung);
+                                                            }
+                                                        });
+                                                    } else if (pilihHsbg.equals("Bangunan gedung tidak bertingkat (Rp. 12.000 permeter persegi)")) {
+                                                        //menutup view yang tidak diperlukan
+                                                        hasilHitung.setText("");
+
+                                                        //membuka view yang diperlukan
+                                                        tombolHasil.setOnClickListener(new View.OnClickListener() {
+                                                            @Override
+                                                            public void onClick(View v) {
+                                                                String lvNull = inputLV.getText().toString();
+                                                                String ItINull = inputItI.getText().toString();
+
+                                                                if(TextUtils.isEmpty(lvNull)) {
+                                                                    inputLV.setError("nilai tidak boleh kosong");
+                                                                    return;
+                                                                }
+                                                                if (TextUtils.isEmpty(ItINull)){
+                                                                    inputItI.setError("nilai tidak boleh kosong");
+                                                                    return;
+                                                                }
+
+                                                                String strlv = inputLV.getText().toString();
+                                                                String strIt = inputItI.getText().toString();
+                                                                double lv = Double.parseDouble(strlv);
+                                                                double It = Double.parseDouble(strIt);
+
+                                                                String hasil = String.valueOf(lv * It * 0.65 * 12000);
+                                                                hasilHitung.setText(hasil);
+                                                                keterangan.setText(R.string.ket_renovasi_gedung);
+                                                            }
+                                                        });
+
+                                                    } else if (pilihHsbg.equals("Bangunan gedung bertingkat (Rp. 18.000 permeter persegi)")) {
+                                                        //menutup view yang tidak diperlukan
+                                                        hasilHitung.setText("");
+
+                                                        //membuka view yang diperlukan
+                                                        tombolHasil.setOnClickListener(new View.OnClickListener() {
+                                                            @Override
+                                                            public void onClick(View v) {
+                                                                String lvNull = inputLV.getText().toString();
+                                                                String ItINull = inputItI.getText().toString();
+
+                                                                if(TextUtils.isEmpty(lvNull)) {
+                                                                    inputLV.setError("nilai tidak boleh kosong");
+                                                                    return;
+                                                                }
+                                                                if (TextUtils.isEmpty(ItINull)){
+                                                                    inputItI.setError("nilai tidak boleh kosong");
+                                                                    return;
+                                                                }
+
+                                                                String strlv = inputLV.getText().toString();
+                                                                String strIt = inputItI.getText().toString();
+                                                                double lv = Double.parseDouble(strlv);
+                                                                double It = Double.parseDouble(strIt);
+
+                                                                String hasil = String.valueOf(lv * It * 0.65 * 18000);
+                                                                hasilHitung.setText(hasil);
+                                                                keterangan.setText(R.string.ket_renovasi_gedung);
+                                                            }
+                                                        });
+                                                    }
+                                                }
+                                                @Override
+                                                public void onNothingSelected(AdapterView<?> parent) {
+
+                                                }
+                                            });
+                                        }
+                                    }
+
+                                    @Override
+                                    public void onNothingSelected(AdapterView<?> parent) {
+
+                                    }
+                                });
+
+                            }else if (pilihIMB.equals("Retribusi pembangunan bukan gedung baru atau prasarana bangunan gedung")){
+                                lv.setText("V");
+                                inputLV.setText("");
+                                ItI.setText("I");
+                                inputItI.setText("");
+                                indeks.setVisibility(View.VISIBLE);
+                                spinTk.setVisibility(View.GONE);
+                                hasilHitung.setText("");
+
+                                spinHsbg.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                                    @Override
+                                    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                                        String pilihHsbg = spinHsbg.getSelectedItem().toString();
+                                        if (pilihHsbg.equals("Pilih Jenis Bangunan")) {
+                                            //menutup view yang tidak diperlukan
+                                            hasilHitung.setText("");
+                                        } else if (pilihHsbg.equals("Bangunan gedung tidak bertingkat sederhana (Rp. 6000 permeter persegi)")) {
+                                            //menutup view yang tidak diperlukan
+                                            hasilHitung.setText("");
+
+                                            //membuka view yang diperlukan
+                                            tombolHasil.setOnClickListener(new View.OnClickListener() {
+
+                                                @Override
+                                                public void onClick(View v) {
+                                                    String lvNull = inputLV.getText().toString();
+                                                    String ItINull = inputItI.getText().toString();
+
+                                                    if(TextUtils.isEmpty(lvNull)) {
+                                                        inputLV.setError("nilai tidak boleh kosong");
+                                                        return;
+                                                    }
+                                                    if (TextUtils.isEmpty(ItINull)){
+                                                        inputItI.setError("nilai tidak boleh kosong");
+                                                        return;
+                                                    }
+
+                                                    String strlv = inputLV.getText().toString();
+                                                    String strItI = inputItI.getText().toString();
+                                                    double lv = Double.parseDouble(strlv);
+                                                    double ItI = Double.parseDouble(strItI);
+
+                                                    String hasil = String.valueOf(lv * ItI * 1 * 6000);
+                                                    hasilHitung.setText(hasil);
+                                                    keterangan.setText(R.string.ket_gedung_baru);
+                                                }
+                                            });
+
+                                        } else if (pilihHsbg.equals("Bangunan gedung tidak bertingkat (Rp. 12.000 permeter persegi)")) {
+                                            //menutup view yang tidak diperlukan
+                                            hasilHitung.setText("");
+
+                                            //membuka view yang diperlukan
+                                            tombolHasil.setOnClickListener(new View.OnClickListener() {
+
+                                                @Override
+                                                public void onClick(View v) {
+                                                    String lvNull = inputLV.getText().toString();
+                                                    String ItINull = inputItI.getText().toString();
+
+                                                    if(TextUtils.isEmpty(lvNull)) {
+                                                        inputLV.setError("nilai tidak boleh kosong");
+                                                        return;
+                                                    }
+                                                    if (TextUtils.isEmpty(ItINull)){
+                                                        inputItI.setError("nilai tidak boleh kosong");
+                                                        return;
+                                                    }
+
+                                                    String strlv = inputLV.getText().toString();
+                                                    String strItI = inputItI.getText().toString();
+                                                    double lv = Double.parseDouble(strlv);
+                                                    double ItI = Double.parseDouble(strItI);
+
+                                                    String hasil = String.valueOf(lv * ItI * 1 * 12000);
+                                                    hasilHitung.setText(hasil);
+                                                    keterangan.setText(R.string.ket_gedung_baru);
+                                                }
+                                            });
+
                                         } else if (pilihHsbg.equals("Bangunan gedung bertingkat (Rp. 18.000 permeter persegi)")) {
-                                            //perkalian
+                                            //menutup view yang tidak diperlukan
+                                            hasilHitung.setText("");
+
+                                            //membuka view yang diperlukan
+                                            tombolHasil.setOnClickListener(new View.OnClickListener() {
+
+                                                @Override
+                                                public void onClick(View v) {
+                                                    String lvNull = inputLV.getText().toString();
+                                                    String ItINull = inputItI.getText().toString();
+
+                                                    if(TextUtils.isEmpty(lvNull)) {
+                                                        inputLV.setError("nilai tidak boleh kosong");
+                                                        return;
+                                                    }
+                                                    if (TextUtils.isEmpty(ItINull)){
+                                                        inputItI.setError("nilai tidak boleh kosong");
+                                                        return;
+                                                    }
+
+                                                    String strlv = inputLV.getText().toString();
+                                                    String strItI = inputItI.getText().toString();
+                                                    double lv = Double.parseDouble(strlv);
+                                                    double ItI = Double.parseDouble(strItI);
+
+                                                    String hasil = String.valueOf(lv * ItI * 1 * 18000);
+                                                    hasilHitung.setText(hasil);
+                                                    keterangan.setText(R.string.ket_gedung_baru);
+                                                }
+                                            });
+                                        }
+                                    }
+
+                                    @Override
+                                    public void onNothingSelected(AdapterView<?> parent) {
+
+                                    }
+                                });
+                            }else if(pilihIMB.equals("Retribusi rehabilitasi prasarana bangunan gedung")){
+                                //menutup view yang tidak diperlukan
+                                lv.setText("V");
+                                inputLV.setText("");
+                                ItI.setText("I");
+                                inputItI.setText("");
+                                indeks.setVisibility(View.GONE);
+                                hasilHitung.setText("");
+
+                                //membuka view yang diperlukan
+                                spinTk.setVisibility(View.VISIBLE);
+
+                                spinTk.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                                    @Override
+                                    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                                        String pilihTk = spinTk.getSelectedItem().toString();
+                                        if (pilihTk.equals("Pilih tingkat kerusakan")){
+                                            hasilHitung.setText("");
+                                            inputLV.setText("");
+                                            inputItI.setText("");
+                                        }
+                                        else if (pilihTk.equals("0.45")){
+                                            //menutup view yang tidak diperlukan
+                                            hasilHitung.setText(null);
+
+                                            //membuka view yang diperlukan
+                                            spinHsbg.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                                                @Override
+                                                public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                                                    String pilihHsbg = spinHsbg.getSelectedItem().toString();
+
+                                                    if (pilihHsbg.equals("Pilih Jenis Bangunan")){
+                                                        hasilHitung.setText("");
+
+                                                    }else if (pilihHsbg.equals("Bangunan gedung tidak bertingkat sederhana (Rp. 6000 permeter persegi)")){
+                                                        //menutup view yang tidak diperlukan
+                                                        hasilHitung.setText("");
+
+                                                        //membuka view yang diperlukan
+                                                        tombolHasil.setOnClickListener(new View.OnClickListener() {
+                                                            @Override
+                                                            public void onClick(View v) {
+                                                                String lvNull = inputLV.getText().toString();
+                                                                String ItINull = inputItI.getText().toString();
+
+                                                                if(TextUtils.isEmpty(lvNull)) {
+                                                                    inputLV.setError("nilai tidak boleh kosong");
+                                                                    return;
+                                                                }
+                                                                if (TextUtils.isEmpty(ItINull)){
+                                                                    inputItI.setError("nilai tidak boleh kosong");
+                                                                    return;
+                                                                }
+
+                                                                String strlv = inputLV.getText().toString();
+                                                                String strIt = inputItI.getText().toString();
+                                                                double lv = Double.parseDouble(strlv);
+                                                                double It = Double.parseDouble(strIt);
+
+                                                                String hasil = String.valueOf(lv * It * 0.45 * 6000);
+                                                                hasilHitung.setText(hasil);
+                                                                keterangan.setText(R.string.ket_renovasi_gedung);
+                                                            }
+                                                        });
+                                                    }else if (pilihHsbg.equals("Bangunan gedung tidak bertingkat (Rp. 12.000 permeter persegi)")){
+                                                        //menutup view yang tidak diperlukan
+                                                        hasilHitung.setText("");
+
+                                                        //membuka view yang diperlukan
+                                                        tombolHasil.setOnClickListener(new View.OnClickListener() {
+                                                            @Override
+                                                            public void onClick(View v) {
+                                                                String lvNull = inputLV.getText().toString();
+                                                                String ItINull = inputItI.getText().toString();
+
+                                                                if(TextUtils.isEmpty(lvNull)) {
+                                                                    inputLV.setError("nilai tidak boleh kosong");
+                                                                    return;
+                                                                }
+                                                                if (TextUtils.isEmpty(ItINull)){
+                                                                    inputItI.setError("nilai tidak boleh kosong");
+                                                                    return;
+                                                                }
+
+                                                                String strlv = inputLV.getText().toString();
+                                                                String strIt = inputItI.getText().toString();
+                                                                double lv = Double.parseDouble(strlv);
+                                                                double It = Double.parseDouble(strIt);
+
+                                                                String hasil = String.valueOf(lv * It * 0.45 * 12000);
+                                                                hasilHitung.setText(hasil);
+                                                                keterangan.setText(R.string.ket_renovasi_gedung);
+                                                            }
+                                                        });
+
+                                                    }else if (pilihHsbg.equals("Bangunan gedung bertingkat (Rp. 18.000 permeter persegi)")){
+                                                        //menutup view yang tidak diperlukan
+                                                        hasilHitung.setText("");
+
+                                                        //membuka view yang diperlukan
+                                                        tombolHasil.setOnClickListener(new View.OnClickListener() {
+                                                            @Override
+                                                            public void onClick(View v) {
+                                                                String lvNull = inputLV.getText().toString();
+                                                                String ItINull = inputItI.getText().toString();
+
+                                                                if(TextUtils.isEmpty(lvNull)) {
+                                                                    inputLV.setError("nilai tidak boleh kosong");
+                                                                    return;
+                                                                }
+                                                                if (TextUtils.isEmpty(ItINull)){
+                                                                    inputItI.setError("nilai tidak boleh kosong");
+                                                                    return;
+                                                                }
+
+                                                                String strlv = inputLV.getText().toString();
+                                                                String strIt = inputItI.getText().toString();
+                                                                double lv = Double.parseDouble(strlv);
+                                                                double It = Double.parseDouble(strIt);
+
+                                                                String hasil = String.valueOf(lv * It * 0.45 * 12000);
+                                                                hasilHitung.setText(hasil);
+                                                                keterangan.setText(R.string.ket_renovasi_gedung);
+                                                            }
+                                                        });
+                                                    }
+                                                }
+
+                                                @Override
+                                                public void onNothingSelected(AdapterView<?> parent) {
+
+                                                }
+                                            });
+                                        }else if (pilihTk.equals("0.65")){
+                                            hasilHitung.setText(null);
+                                            spinHsbg.getSelectedItem().equals("Pilih Jenis Bangunan");
+
+                                            spinHsbg.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                                                @Override
+                                                public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                                                    final String pilihHsbg = spinHsbg.getSelectedItem().toString();
+
+                                                    if (pilihHsbg.equals("Pilih Jenis Bangunan")) {
+                                                        hasilHitung.setText("");
+
+                                                    } else if (pilihHsbg.equals("Bangunan gedung tidak bertingkat sederhana (Rp. 6000 permeter persegi)")) {
+                                                        //menutup view yang tidak diperlukan
+                                                        hasilHitung.setText("");
+
+                                                        //membuka view yang diperlukan
+                                                        tombolHasil.setOnClickListener(new View.OnClickListener() {
+                                                            @Override
+                                                            public void onClick(View v) {
+                                                                String lvNull = inputLV.getText().toString();
+                                                                String ItINull = inputItI.getText().toString();
+
+                                                                if(TextUtils.isEmpty(lvNull)) {
+                                                                    inputLV.setError("nilai tidak boleh kosong");
+                                                                    return;
+                                                                }
+                                                                if (TextUtils.isEmpty(ItINull)){
+                                                                    inputItI.setError("nilai tidak boleh kosong");
+                                                                    return;
+                                                                }
+
+                                                                String strlv = inputLV.getText().toString();
+                                                                String strIt = inputItI.getText().toString();
+                                                                double lv = Double.parseDouble(strlv);
+                                                                double It = Double.parseDouble(strIt);
+
+                                                                String hasil = String.valueOf(lv * It * 0.65 * 6000);
+                                                                hasilHitung.setText(hasil);
+                                                                keterangan.setText(R.string.ket_renovasi_gedung);
+                                                            }
+                                                        });
+                                                    } else if (pilihHsbg.equals("Bangunan gedung tidak bertingkat (Rp. 12.000 permeter persegi)")) {
+                                                        //menutup view yang tidak diperlukan
+                                                        hasilHitung.setText("");
+
+                                                        //membuka view yang diperlukan
+                                                        tombolHasil.setOnClickListener(new View.OnClickListener() {
+                                                            @Override
+                                                            public void onClick(View v) {
+                                                                String lvNull = inputLV.getText().toString();
+                                                                String ItINull = inputItI.getText().toString();
+
+                                                                if(TextUtils.isEmpty(lvNull)) {
+                                                                    inputLV.setError("nilai tidak boleh kosong");
+                                                                    return;
+                                                                }
+                                                                if (TextUtils.isEmpty(ItINull)){
+                                                                    inputItI.setError("nilai tidak boleh kosong");
+                                                                    return;
+                                                                }
+
+                                                                String strlv = inputLV.getText().toString();
+                                                                String strIt = inputItI.getText().toString();
+                                                                double lv = Double.parseDouble(strlv);
+                                                                double It = Double.parseDouble(strIt);
+
+                                                                String hasil = String.valueOf(lv * It * 0.65 * 12000);
+                                                                hasilHitung.setText(hasil);
+                                                                keterangan.setText(R.string.ket_renovasi_gedung);
+                                                            }
+                                                        });
+
+                                                    } else if (pilihHsbg.equals("Bangunan gedung bertingkat (Rp. 18.000 permeter persegi)")) {
+                                                        //menutup view yang tidak diperlukan
+                                                        hasilHitung.setText("");
+
+                                                        //membuka view yang diperlukan
+                                                        tombolHasil.setOnClickListener(new View.OnClickListener() {
+                                                            @Override
+                                                            public void onClick(View v) {
+                                                                String lvNull = inputLV.getText().toString();
+                                                                String ItINull = inputItI.getText().toString();
+
+                                                                if(TextUtils.isEmpty(lvNull)) {
+                                                                    inputLV.setError("nilai tidak boleh kosong");
+                                                                    return;
+                                                                }
+                                                                if (TextUtils.isEmpty(ItINull)){
+                                                                    inputItI.setError("nilai tidak boleh kosong");
+                                                                    return;
+                                                                }
+
+                                                                String strlv = inputLV.getText().toString();
+                                                                String strIt = inputItI.getText().toString();
+                                                                double lv = Double.parseDouble(strlv);
+                                                                double It = Double.parseDouble(strIt);
+
+                                                                String hasil = String.valueOf(lv * It * 0.65 * 18000);
+                                                                hasilHitung.setText(hasil);
+                                                                keterangan.setText(R.string.ket_renovasi_gedung);
+                                                            }
+                                                        });
+                                                    }
+                                                }
+                                                @Override
+                                                public void onNothingSelected(AdapterView<?> parent) {
+
+                                                }
+                                            });
                                         }
                                     }
 
@@ -237,6 +912,7 @@ public class Kalkulator extends Home {
 
                     if (pilihPerikanan.equals("Pilih jenis perikanan")){
                         perikananTawar.setVisibility(View.GONE);
+                        perikananPayau.setVisibility(View.GONE);
 
                     }else if (pilihPerikanan.equals("Ikan air tawar")){
                         //menutup view yang tidak diperlukan
@@ -250,6 +926,7 @@ public class Kalkulator extends Home {
                                 String pilihTawar = perikananTawar.getSelectedItem().toString();
                                 if (pilihTawar.equals("Pilih metode perikanan air tawar")){
                                     perikananPayau.setVisibility(View.GONE);
+
 
                                 }else if (pilihTawar.equals("Pembenihan ikan dengan luas 0,75 ha atau lebih")){
                                     //menutup view yang tidak diperlukan
@@ -268,6 +945,10 @@ public class Kalkulator extends Home {
                             }
                         });
                     }else if (pilihPerikanan.equals("Ikan air payau")){
+                        //menutup view yang tidak diperlukan
+                        perikananTawar.setVisibility(View.GONE);
+
+                        //membuka view yang diperlukan
                         perikananPayau.setVisibility(View.VISIBLE);
                         perikananPayau.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
                             @Override
@@ -277,6 +958,9 @@ public class Kalkulator extends Home {
 
                                 }else if (pilihPayau.equals("Pembenihan ikan dengan luas 0,5 ha atau lebih")){
                                     //menutup view yang tidak diperlukan
+
+                                    //membuka view yang tidak digunakan
+
                                 }else if (pilihPayau.equals("Pembesaran ikan dengan luas 5 ha atau lebih")){
                                     //menutup view yang tidak diperlukan
                                 }else if (pilihPayau.equals("Pembudidayaan rumput laut")){
