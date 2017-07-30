@@ -1571,7 +1571,16 @@ public class Kalkulator extends Home {
                         });
 
                     }else if (pilihPerikanan.equals("Usaha kapal pengangkutan ikan")){
+                        // menutup view yang tidak diperlukan
                         hasilHitung.setText("");
+                        spinPenangkapanIkan.setVisibility(View.GONE);
+                        perikananTawar.setVisibility(View.GONE);
+                        perikananPayau.setVisibility(View.GONE);
+                        spinTk.setVisibility(View.GONE);
+                        spinRumput.setVisibility(View.GONE);
+                        spinKerang.setVisibility(View.GONE);
+
+                        //membuka view yang diperlukan
                         teksLuas.setVisibility(View.VISIBLE);
                         teksLuas.setText(R.string.jumlah_kapal);
                         inputLuas.setVisibility(View.VISIBLE);
