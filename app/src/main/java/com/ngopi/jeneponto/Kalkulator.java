@@ -57,11 +57,15 @@ public class Kalkulator extends Home {
 
         //deklarasi ketika memilih izin usaha perikanan
         //khusus spinner
+        final TextView teksLuas = (TextView) findViewById(R.id.text_luas);
+        final EditText inputLuas = (EditText) findViewById(R.id.input_luas);
         final Spinner jenisPerikanan = (Spinner) findViewById(R.id.spin_jenis_perikanan);
         final Spinner perikananTawar = (Spinner) findViewById(R.id.spin_perikanan_tawar);
         final Spinner perikananPayau = (Spinner) findViewById(R.id.spin_perikanan_payau);
         final Spinner spinRumput = (Spinner) findViewById(R.id.spin_rumput);
         final Spinner spinKerang = (Spinner) findViewById(R.id.spin_kerang_hijau);
+
+        //deklarasi ketika memilih penangkapan ikan
         final Spinner spinPenangkapanIkan = (Spinner) findViewById(R.id.spin_penangkapan_ikan);
 
         izinPertama.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -78,6 +82,13 @@ public class Kalkulator extends Home {
                     jenisPerikanan.setVisibility(View.GONE);
                     perikananTawar.setVisibility(View.GONE);
                     perikananPayau.setVisibility(View.GONE);
+                    spinRumput.setVisibility(View.GONE);
+                    spinHsbg.setVisibility(View.GONE);
+                    spinKerang.setVisibility(View.GONE);
+                    spinPenangkapanIkan.setVisibility(View.GONE);
+                    hasilHitung.setText("");
+                    inputLuas.setVisibility(View.GONE);
+                    teksLuas.setVisibility(View.GONE);
 
                 }
                 else if (pilihIzin.equals("Perpanjangan Izin Memperkerjakan Tenaga Kerja Asing")){
@@ -85,6 +96,13 @@ public class Kalkulator extends Home {
                     llkedua.setVisibility(View.GONE);
                     jenisPerikanan.setVisibility(View.GONE);
                     perikananTawar.setVisibility(View.GONE);
+                    spinRumput.setVisibility(View.GONE);
+                    spinHsbg.setVisibility(View.GONE);
+                    spinKerang.setVisibility(View.GONE);
+                    spinPenangkapanIkan.setVisibility(View.GONE);
+                    hasilHitung.setText("");
+                    inputLuas.setVisibility(View.GONE);
+                    teksLuas.setVisibility(View.GONE);
 
                     //membuka view yang diperlukan
                     llpertama.setVisibility(View.VISIBLE);
@@ -117,7 +135,13 @@ public class Kalkulator extends Home {
                     ketTenagaKerja.setVisibility(View.GONE);
                     jenisPerikanan.setVisibility(View.GONE);
                     perikananTawar.setVisibility(View.GONE);
+                    spinRumput.setVisibility(View.GONE);
+                    spinHsbg.setVisibility(View.GONE);
+                    spinKerang.setVisibility(View.GONE);
+                    spinPenangkapanIkan.setVisibility(View.GONE);
                     hasilHitung.setText(null);
+                    inputLuas.setVisibility(View.GONE);
+                    teksLuas.setVisibility(View.GONE);
 
                     //membuka view yang diperlukan
                     llkedua.setVisibility(View.VISIBLE);
@@ -139,6 +163,10 @@ public class Kalkulator extends Home {
                                 indeks.setVisibility(View.GONE);
                                 hasilHitung.setText("");
                                 spinTk.setVisibility(View.GONE);
+                                spinRumput.setVisibility(View.GONE);
+                                spinHsbg.setVisibility(View.GONE);
+                                spinKerang.setVisibility(View.GONE);
+                                spinPenangkapanIkan.setVisibility(View.GONE);
 
 
                             } else if (pilihIMB.equals("Retribusi pembangunan gedung baru")) {
@@ -148,6 +176,10 @@ public class Kalkulator extends Home {
                                 indeks.setVisibility(View.VISIBLE);
                                 spinTk.setVisibility(View.GONE);
                                 hasilHitung.setText("");
+                                spinRumput.setVisibility(View.GONE);
+                                spinHsbg.setVisibility(View.GONE);
+                                spinKerang.setVisibility(View.GONE);
+                                spinPenangkapanIkan.setVisibility(View.GONE);
 
                                 spinHsbg.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
@@ -270,6 +302,10 @@ public class Kalkulator extends Home {
                                 inputItI.setText("");
                                 indeks.setVisibility(View.GONE);
                                 hasilHitung.setText("");
+                                spinRumput.setVisibility(View.GONE);
+                                spinHsbg.setVisibility(View.GONE);
+                                spinKerang.setVisibility(View.GONE);
+                                spinPenangkapanIkan.setVisibility(View.GONE);
 
                                 //membuka view yang diperlukan
                                 spinTk.setVisibility(View.VISIBLE);
@@ -524,6 +560,10 @@ public class Kalkulator extends Home {
                                 inputItI.setText("");
                                 indeks.setVisibility(View.VISIBLE);
                                 spinTk.setVisibility(View.GONE);
+                                spinRumput.setVisibility(View.GONE);
+                                spinHsbg.setVisibility(View.GONE);
+                                spinKerang.setVisibility(View.GONE);
+                                spinPenangkapanIkan.setVisibility(View.GONE);
                                 hasilHitung.setText("");
 
                                 spinHsbg.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -644,6 +684,10 @@ public class Kalkulator extends Home {
                                 inputItI.setText("");
                                 indeks.setVisibility(View.GONE);
                                 hasilHitung.setText("");
+                                spinRumput.setVisibility(View.GONE);
+                                spinHsbg.setVisibility(View.GONE);
+                                spinKerang.setVisibility(View.GONE);
+                                spinPenangkapanIkan.setVisibility(View.GONE);
 
                                 //membuka view yang diperlukan
                                 spinTk.setVisibility(View.VISIBLE);
@@ -902,9 +946,15 @@ public class Kalkulator extends Home {
                     llpertama.setVisibility(View.GONE);
                     ketTenagaKerja.setVisibility(View.GONE);
                     llkedua.setVisibility(View.GONE);
+                    spinRumput.setVisibility(View.GONE);
+                    spinHsbg.setVisibility(View.GONE);
+                    spinKerang.setVisibility(View.GONE);
+                    spinPenangkapanIkan.setVisibility(View.GONE);
+                    hasilHitung.setText("");
 
                     //membuka view yang diperlukan
                     jenisPerikanan.setVisibility(View.VISIBLE);
+
                     jenisPerikanan.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
                         @Override
                         public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -913,10 +963,20 @@ public class Kalkulator extends Home {
                     if (pilihPerikanan.equals("Pilih jenis perikanan")){
                         perikananTawar.setVisibility(View.GONE);
                         perikananPayau.setVisibility(View.GONE);
+                        teksLuas.setVisibility(View.GONE);
+                        inputLuas.setVisibility(View.GONE);
+                        hasilHitung.setText("");
+                        spinRumput.setVisibility(View.GONE);
+                        spinHsbg.setVisibility(View.GONE);
+                        spinKerang.setVisibility(View.GONE);
+                        spinPenangkapanIkan.setVisibility(View.GONE);
 
                     }else if (pilihPerikanan.equals("Ikan air tawar")){
                         //menutup view yang tidak diperlukan
                         perikananPayau.setVisibility(View.GONE);
+                        hasilHitung.setText("");
+                        teksLuas.setVisibility(View.GONE);
+                        inputLuas.setVisibility(View.GONE);
 
                         //membuka view yang diperlukan
                         perikananTawar.setVisibility(View.VISIBLE);
@@ -926,28 +986,152 @@ public class Kalkulator extends Home {
                                 String pilihTawar = perikananTawar.getSelectedItem().toString();
                                 if (pilihTawar.equals("Pilih metode perikanan air tawar")){
                                     perikananPayau.setVisibility(View.GONE);
+                                    hasilHitung.setText("");
+                                    teksLuas.setVisibility(View.GONE);
+                                    inputLuas.setVisibility(View.GONE);
 
 
                                 }else if (pilihTawar.equals("Pembenihan ikan dengan luas 0,75 ha atau lebih")){
                                     //menutup view yang tidak diperlukan
+                                    perikananPayau.setVisibility(View.GONE);
+                                    hasilHitung.setText("");
 
                                     //membuka view yang diperlukan
+                                    teksLuas.setVisibility(View.VISIBLE);
+                                    inputLuas.setVisibility(View.VISIBLE);
+                                    teksLuas.setText(R.string.luas_lahan);
+                                    inputLuas.setText("");
+                                    tombolHasil.setOnClickListener(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View v) {
+                                            String luasNull = inputLuas.getText().toString();
+
+                                            if(TextUtils.isEmpty(luasNull)) {
+                                                inputLuas.setError("nilai tidak boleh kosong");
+                                                return;
+                                            }
+
+                                            String strLuas = inputLuas.getText().toString();
+                                            double luas = Double.parseDouble(strLuas);
+
+                                            String hasil = String.valueOf(100000 * luas);
+                                            hasilHitung.setText(hasil);
+                                            keterangan.setText(R.string.ket_tawar1);
+                                        }
+                                    });
 
                                 }else if (pilihTawar.equals("Pembenihan ikan dengan luas 2 ha atau lebih")){
                                     //menutup view yang tidak diperlukan
+                                    perikananPayau.setVisibility(View.GONE);
+                                    hasilHitung.setText("");
 
                                     //membuka view yang diperlukan
+                                    teksLuas.setVisibility(View.VISIBLE);
+                                    inputLuas.setVisibility(View.VISIBLE);
+                                    teksLuas.setText(R.string.luas_lahan);
+                                    inputLuas.setText("");
+                                    tombolHasil.setOnClickListener(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View v) {
+                                            String luasNull = inputLuas.getText().toString();
 
+                                            if(TextUtils.isEmpty(luasNull)) {
+                                                inputLuas.setError("nilai tidak boleh kosong");
+                                                return;
+                                            }
+
+                                            String strLuas = inputLuas.getText().toString();
+                                            double luas = Double.parseDouble(strLuas);
+
+                                            String hasil = String.valueOf(100000 * luas);
+                                            hasilHitung.setText(hasil);
+                                            keterangan.setText(R.string.ket_tawar2);
+                                        }
+                                    });
                                 }else if (pilihTawar.equals("Pembenihan ikan lebih dari 5 unit")){
                                     //menutup view yang tidak diperlukan
+                                    perikananPayau.setVisibility(View.GONE);
+                                    hasilHitung.setText("");
+
 
                                     //membuka view yang diperlukan
+                                    teksLuas.setVisibility(View.VISIBLE);
+                                    inputLuas.setVisibility(View.VISIBLE);
+                                    teksLuas.setText(R.string.luas_unit);
+                                    inputLuas.setText("");
+                                    tombolHasil.setOnClickListener(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View v) {
+                                            String luasNull = inputLuas.getText().toString();
 
+                                            if(TextUtils.isEmpty(luasNull)) {
+                                                inputLuas.setError("nilai tidak boleh kosong");
+                                                return;
+                                            }
+
+                                            String strLuas = inputLuas.getText().toString();
+                                            double luas = Double.parseDouble(strLuas);
+
+                                            String hasil = String.valueOf(150*luas);
+                                            hasilHitung.setText(hasil);
+                                            keterangan.setText(R.string.ket_tawar3);
+                                        }
+                                    });
                                 }else if (pilihTawar.equals("Usaha keramba jaring apung lebih dari 4 unit")){
                                     //menutup view yang tidak diperlukan
+                                    perikananPayau.setVisibility(View.GONE);
+                                    hasilHitung.setText("");
 
                                     //membuka view yang diperlukan
+                                    teksLuas.setVisibility(View.VISIBLE);
+                                    inputLuas.setVisibility(View.VISIBLE);
+                                    teksLuas.setText(R.string.luas_unit);
+                                    inputLuas.setText("");
+                                    tombolHasil.setOnClickListener(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View v) {
+                                            String luasNull = inputLuas.getText().toString();
 
+                                            if(TextUtils.isEmpty(luasNull)) {
+                                                inputLuas.setError("nilai tidak boleh kosong");
+                                                return;
+                                            }
+
+                                            String strLuas = inputLuas.getText().toString();
+                                            double luas = Double.parseDouble(strLuas);
+
+                                            String hasil = String.valueOf(15000*luas);
+                                            hasilHitung.setText(hasil);
+                                            keterangan.setText(R.string.ket_tawar4);
+                                        }
+                                    });
+                                }else if (pilihTawar.equals("Usaha keramba lebih dari 50 unit")){
+                                    //menutup view yang tidak diperlukan
+                                    hasilHitung.setText("");
+
+                                    //membuka view yang diperlukan
+                                    teksLuas.setVisibility(View.VISIBLE);
+                                    inputLuas.setVisibility(View.VISIBLE);
+                                    teksLuas.setText(R.string.luas_unit);
+                                    inputLuas.setText("");
+                                    tombolHasil.setOnClickListener(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View v) {
+                                            String luasNull = inputLuas.getText().toString();
+
+                                            if(TextUtils.isEmpty(luasNull)) {
+                                                inputLuas.setError("nilai tidak boleh kosong");
+                                                return;
+                                            }
+
+                                            String strLuas = inputLuas.getText().toString();
+                                            double luas = Double.parseDouble(strLuas);
+
+                                            String hasil = String.valueOf(150*luas);
+                                            hasilHitung.setText(hasil);
+                                            keterangan.setText(R.string.ket_tawar5);
+                                        }
+                                    });
                                 }
                             }
 
@@ -959,36 +1143,180 @@ public class Kalkulator extends Home {
                     }else if (pilihPerikanan.equals("Ikan air payau")){
                         //menutup view yang tidak diperlukan
                         perikananTawar.setVisibility(View.GONE);
+                        teksLuas.setVisibility(View.GONE);
+                        inputLuas.setVisibility(View.GONE);
+                        hasilHitung.setText("");
 
                         //membuka view yang diperlukan
                         perikananPayau.setVisibility(View.VISIBLE);
                         perikananPayau.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
                             @Override
                             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                                String pilihPayau = perikananPayau.getSelectedItem().toString();
+                                final String pilihPayau = perikananPayau.getSelectedItem().toString();
                                 if (pilihPayau.equals("Pilih metode perikanan air payau")){
+                                    //menutup view yang tidak diperlukan
+                                    spinRumput.setVisibility(View.GONE);
+                                    inputLuas.setVisibility(View.GONE);
+                                    teksLuas.setVisibility(View.GONE);
+                                    hasilHitung.setText("");
 
                                 }else if (pilihPayau.equals("Pembenihan ikan dengan luas 0,5 ha atau lebih")){
                                     //menutup view yang tidak diperlukan
+                                    spinRumput.setVisibility(View.GONE);
+                                    hasilHitung.setText("");
 
                                     //membuka view yang tidak digunakan
+                                    teksLuas.setVisibility(View.VISIBLE);
+                                    inputLuas.setVisibility(View.VISIBLE);
+                                    teksLuas.setText(R.string.luas_lahan);
+                                    inputLuas.setText("");
 
+                                    tombolHasil.setOnClickListener(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View v) {
+                                            String luasNull = inputLuas.getText().toString();
+
+                                            if(TextUtils.isEmpty(luasNull)) {
+                                                inputLuas.setError("nilai tidak boleh kosong");
+                                                return;
+                                            }
+
+                                            String strLuas = inputLuas.getText().toString();
+                                            double luas = Double.parseDouble(strLuas);
+
+                                            String hasil = String.valueOf(100000*luas);
+                                            hasilHitung.setText(hasil);
+                                            keterangan.setText(R.string.ket_payau1);
+                                        }
+                                    });
                                 }else if (pilihPayau.equals("Pembesaran ikan dengan luas 5 ha atau lebih")){
                                     //menutup view yang tidak diperlukan
+                                    spinRumput.setVisibility(View.GONE);
+                                    hasilHitung.setText("");
+
+                                    //membuka view yang tidak digunakan
+                                    teksLuas.setVisibility(View.VISIBLE);
+                                    inputLuas.setVisibility(View.VISIBLE);
+                                    teksLuas.setText(R.string.luas_lahan);
+                                    inputLuas.setText("");
+
+                                    tombolHasil.setOnClickListener(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View v) {
+                                            String luasNull = inputLuas.getText().toString();
+
+                                            if(TextUtils.isEmpty(luasNull)) {
+                                                inputLuas.setError("nilai tidak boleh kosong");
+                                                return;
+                                            }
+
+                                            String strLuas = inputLuas.getText().toString();
+                                            double luas = Double.parseDouble(strLuas);
+
+                                            String hasil = String.valueOf(100000*luas);
+                                            hasilHitung.setText(hasil);
+                                            keterangan.setText(R.string.ket_payau2);
+                                        }
+                                    });
                                 }else if (pilihPayau.equals("Pembudidayaan rumput laut")){
+                                    //menutup view yang tidak diperlukan
+                                    spinKerang.setVisibility(View.GONE);
+                                    hasilHitung.setText("");
+
+                                    //membuka view yang dibutuhkan
                                     spinRumput.setVisibility(View.VISIBLE);
                                     spinRumput.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                         @Override
                                         public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                                            String pilihRumput = perikananPayau.getSelectedItem().toString();
+                                            String pilihRumput = spinRumput.getSelectedItem().toString();
                                             if (pilihRumput.equals("pilih metode budidaya rumput laut")) {
+                                                //menutup view yang tidak diperlukan
+                                                hasilHitung.setText("");
+                                                teksLuas.setVisibility(View.GONE);
+                                                inputLuas.setVisibility(View.GONE);
 
                                             } else if (pilihRumput.equals("Lepas dasar")) {
                                                 //menutup view yang tidak diperlukan
+                                                hasilHitung.setText("");
+
+                                                //membuka view yang diperlukan
+                                                teksLuas.setVisibility(View.VISIBLE);
+                                                inputLuas.setVisibility(View.VISIBLE);
+                                                teksLuas.setText(R.string.luas_lepas_dasar);
+                                                inputLuas.setText("");
+
+                                                tombolHasil.setOnClickListener(new View.OnClickListener() {
+                                                    @Override
+                                                    public void onClick(View v) {
+                                                        String luasNull = inputLuas.getText().toString();
+
+                                                        if(TextUtils.isEmpty(luasNull)) {
+                                                            inputLuas.setError("nilai tidak boleh kosong");
+                                                            return;
+                                                        }
+
+                                                        String strLuas = inputLuas.getText().toString();
+                                                        double luas = Double.parseDouble(strLuas);
+
+                                                        String hasil = String.valueOf(5 * luas);
+                                                        hasilHitung.setText(hasil);
+                                                        keterangan.setText(R.string.ket_rumput_lepas);
+                                                    }
+                                                });
                                             } else if (pilihRumput.equals("Rakit apung")) {
                                                 //menutup view yang tidak diperlukan
+
+                                                //membuka view yang tidak digunakan
+                                                teksLuas.setVisibility(View.VISIBLE);
+                                                inputLuas.setVisibility(View.VISIBLE);
+                                                teksLuas.setText(R.string.luas_usaha_rakit_apung);
+                                                inputLuas.setText("");
+
+                                                tombolHasil.setOnClickListener(new View.OnClickListener() {
+                                                    @Override
+                                                    public void onClick(View v) {
+                                                        String luasNull = inputLuas.getText().toString();
+
+                                                        if(TextUtils.isEmpty(luasNull)) {
+                                                            inputLuas.setError("nilai tidak boleh kosong");
+                                                            return;
+                                                        }
+
+                                                        String strLuas = inputLuas.getText().toString();
+                                                        double luas = Double.parseDouble(strLuas);
+
+                                                        String hasil = String.valueOf(5*luas);
+                                                        hasilHitung.setText(hasil);
+                                                        keterangan.setText(R.string.ket_rumput_rakit);
+                                                    }
+                                                });
                                             } else if (pilihRumput.equals("Long line")) {
                                                 //menutup view yang tidak diperlukan
+
+                                                //membuka view yang tidak digunakan
+                                                teksLuas.setVisibility(View.VISIBLE);
+                                                inputLuas.setVisibility(View.VISIBLE);
+                                                teksLuas.setText(R.string.luas_longline);
+                                                inputLuas.setText("");
+
+                                                tombolHasil.setOnClickListener(new View.OnClickListener() {
+                                                    @Override
+                                                    public void onClick(View v) {
+                                                        String luasNull = inputLuas.getText().toString();
+
+                                                        if(TextUtils.isEmpty(luasNull)) {
+                                                            inputLuas.setError("nilai tidak boleh kosong");
+                                                            return;
+                                                        }
+
+                                                        String strLuas = inputLuas.getText().toString();
+                                                        double luas = Double.parseDouble(strLuas);
+
+                                                        String hasil = String.valueOf(50000*luas);
+                                                        hasilHitung.setText(hasil);
+                                                        keterangan.setText(R.string.ket_rumput_longline);
+                                                    }
+                                                });
                                             }
                                         }
 
@@ -1000,6 +1328,93 @@ public class Kalkulator extends Home {
                                 }
                                         else if (pilihPayau.equals("Usaha kerang hijau")){
                                     //menutup view yang tidak diperlukan
+                                    spinRumput.setVisibility(View.GONE);
+                                    teksLuas.setVisibility(View.GONE);
+                                    inputLuas.setVisibility(View.GONE);
+                                    hasilHitung.setText("");
+
+                                    //membuka view yang diperlukan
+                                    spinKerang.setVisibility(View.VISIBLE);
+                                    spinKerang.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                                        @Override
+                                        public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                                            String pilihKerang = spinKerang.getSelectedItem().toString();
+
+                                            if (pilihKerang.equals("pilih metode usaha kerang hijau")){
+                                                //menutup view yang tidak diperlukan
+                                                inputLuas.setVisibility(View.GONE);
+                                                teksLuas.setVisibility(View.GONE);
+                                                hasilHitung.setText("");
+
+                                            }else if (pilihKerang.equals("Rakit apung atau rakit tancap")){
+                                                //menutup view yang tidak diperlukan
+                                                hasilHitung.setText("");
+                                                inputLuas.setText("");
+
+                                                //membuka view yang tidak digunakan
+                                                inputLuas.setVisibility(View.VISIBLE);
+                                                teksLuas.setVisibility(View.VISIBLE);
+                                                teksLuas.setText(R.string.luas_usaha_rakit_apung);
+                                                inputLuas.setText("");
+
+                                                tombolHasil.setOnClickListener(new View.OnClickListener() {
+                                                    @Override
+                                                    public void onClick(View v) {
+                                                        String luasNull = inputLuas.getText().toString();
+
+                                                        if(TextUtils.isEmpty(luasNull)) {
+                                                            inputLuas.setError("nilai tidak boleh kosong");
+                                                            return;
+                                                        }
+
+                                                        String strLuas = inputLuas.getText().toString();
+                                                        double luas = Double.parseDouble(strLuas);
+
+                                                        String hasil = String.valueOf(5*luas);
+                                                        hasilHitung.setText(hasil);
+                                                        keterangan.setText(R.string.ket_kerang_rakit);
+                                                    }
+                                                });
+
+                                            }else if(pilihKerang.equals("Long line")){
+                                                //menutup view yang tidak diperlukan
+                                                inputLuas.setText("");
+                                                hasilHitung.setText("");
+
+                                                //membuka view yang tidak digunakan
+                                                inputLuas.setVisibility(View.VISIBLE);
+                                                teksLuas.setVisibility(View.VISIBLE);
+                                                teksLuas.setText(R.string.luas_longline);
+                                                inputLuas.setText("");
+
+                                                tombolHasil.setOnClickListener(new View.OnClickListener() {
+                                                    @Override
+                                                    public void onClick(View v) {
+                                                        String luasNull = inputLuas.getText().toString();
+
+                                                        if(TextUtils.isEmpty(luasNull)) {
+                                                            inputLuas.setError("nilai tidak boleh kosong");
+                                                            return;
+                                                        }
+
+                                                        String strLuas = inputLuas.getText().toString();
+                                                        double luas = Double.parseDouble(strLuas);
+
+                                                        String hasil = String.valueOf(10*luas);
+                                                        hasilHitung.setText(hasil);
+                                                        keterangan.setText(R.string.ket_rumput_longline);
+                                                    }
+                                                });
+
+                                            }
+
+                                        }
+
+                                        @Override
+                                        public void onNothingSelected(AdapterView<?> parent) {
+
+                                        }
+                                    });
                                 }
                             }
 
@@ -1011,9 +1426,175 @@ public class Kalkulator extends Home {
 
 
                     }else if (pilihPerikanan.equals("Usaha perikanan penangkapan ikan")){
+                        //menutup view yang tidak diperlukan
+                        perikananTawar.setVisibility(View.GONE);
+                        perikananPayau.setVisibility(View.GONE);
+                        teksLuas.setVisibility(View.GONE);
+                        inputLuas.setVisibility(View.GONE);
+                        hasilHitung.setText("");
+
+                        spinPenangkapanIkan.setVisibility(View.VISIBLE);
+                        spinPenangkapanIkan.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                            @Override
+                            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                                String pilihKapal = spinPenangkapanIkan.getSelectedItem().toString();
+
+                                if (pilihKapal.equals("Pilih metode penangkapan ikan")){
+                                    //menutup view yang tidak diperlukan
+                                    teksLuas.setVisibility(View.GONE);
+                                    inputLuas.setVisibility(View.GONE);
+                                    hasilHitung.setText("");
+
+                                }else if (pilihKapal.equals("penangkapan ikan dengan kapal bobot dibawah 5 GT")){
+                                    //menutup view yang tidak diperlukan
+                                    hasilHitung.setText("");
+                                    inputLuas.setText("");
+
+                                    //membuka view yang tidak digunakan
+                                    inputLuas.setVisibility(View.VISIBLE);
+                                    teksLuas.setVisibility(View.VISIBLE);
+                                    teksLuas.setText(R.string.jumlah_kapal);
+                                    inputLuas.setText("");
+
+                                    tombolHasil.setOnClickListener(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View v) {
+                                            String kapalNull = inputLuas.getText().toString();
+
+                                            if(TextUtils.isEmpty(kapalNull)) {
+                                                inputLuas.setError("nilai tidak boleh kosong");
+                                                return;
+                                            }
+
+                                            String strKapal = inputLuas.getText().toString();
+                                            double kapal = Double.parseDouble(strKapal);
+
+                                            String hasil = String.valueOf(40000 * kapal);
+                                            hasilHitung.setText(hasil);
+                                            keterangan.setText(R.string.ket_ikan_kapal);
+                                        }
+                                    });
+                                }else if (pilihKapal.equals("Rawe (long line) dan gill net")){
+                                    //menutup view yang tidak diperlukan
+                                    hasilHitung.setText("");
+                                    inputLuas.setText("");
+
+                                    //membuka view yang tidak digunakan
+                                    inputLuas.setVisibility(View.VISIBLE);
+                                    teksLuas.setVisibility(View.VISIBLE);
+                                    teksLuas.setText(R.string.jumlah_kapal_tahun);
+                                    inputLuas.setText("");
+
+                                    tombolHasil.setOnClickListener(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View v) {
+                                            String kapalNull = inputLuas.getText().toString();
+
+                                            if(TextUtils.isEmpty(kapalNull)) {
+                                                inputLuas.setError("nilai tidak boleh kosong");
+                                                return;
+                                            }
+
+                                            String strKapal = inputLuas.getText().toString();
+                                            double kapal = Double.parseDouble(strKapal);
+
+                                            String hasil = String.valueOf(30000 * kapal);
+                                            hasilHitung.setText(hasil);
+                                            keterangan.setText(R.string.ket_ikan_longline);
+                                        }
+                                    });
+                                }else if (pilihKapal.equals("mini purse seine")){
+                                    //menutup view yang tidak diperlukan
+                                    hasilHitung.setText("");
+                                    inputLuas.setText("");
+
+                                    //membuka view yang tidak digunakan
+                                    inputLuas.setVisibility(View.VISIBLE);
+                                    teksLuas.setVisibility(View.VISIBLE);
+                                    teksLuas.setText(R.string.jumlah_kapal_tahun);
+                                    inputLuas.setText("");
+
+                                    tombolHasil.setOnClickListener(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View v) {
+                                            String kapalNull = inputLuas.getText().toString();
+
+                                            if(TextUtils.isEmpty(kapalNull)) {
+                                                inputLuas.setError("nilai tidak boleh kosong");
+                                                return;
+                                            }
+
+                                            String strKapal = inputLuas.getText().toString();
+                                            double kapal = Double.parseDouble(strKapal);
+
+                                            String hasil = String.valueOf(35000 * kapal);
+                                            hasilHitung.setText(hasil);
+                                            keterangan.setText(R.string.ket_ikan_purse);
+                                        }
+                                    });
+                                }else if (pilihKapal.equals("alat lainnya dengan bobot kapal dibawah 5 GT")){
+                                    //menutup view yang tidak diperlukan
+                                    hasilHitung.setText("");
+                                    inputLuas.setText("");
+
+                                    //membuka view yang tidak digunakan
+                                    inputLuas.setVisibility(View.VISIBLE);
+                                    teksLuas.setVisibility(View.VISIBLE);
+                                    teksLuas.setText(R.string.jumlah_kapal_tahun);
+                                    inputLuas.setText("");
+
+                                    tombolHasil.setOnClickListener(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View v) {
+                                            String kapalNull = inputLuas.getText().toString();
+
+                                            if(TextUtils.isEmpty(kapalNull)) {
+                                                inputLuas.setError("nilai tidak boleh kosong");
+                                                return;
+                                            }
+
+                                            String strKapal = inputLuas.getText().toString();
+                                            double kapal = Double.parseDouble(strKapal);
+
+                                            String hasil = String.valueOf(25000 * kapal);
+                                            hasilHitung.setText(hasil);
+                                            keterangan.setText(R.string.ket_ikan_other);
+                                        }
+                                    });
+                                }
+                            }
+
+                            @Override
+                            public void onNothingSelected(AdapterView<?> parent) {
+
+                            }
+                        });
 
                     }else if (pilihPerikanan.equals("Usaha kapal pengangkutan ikan")){
+                        hasilHitung.setText("");
+                        teksLuas.setVisibility(View.VISIBLE);
+                        teksLuas.setText(R.string.jumlah_kapal);
+                        inputLuas.setVisibility(View.VISIBLE);
+                        inputLuas.setText("");
 
+                        tombolHasil.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                String kapalNull = inputLuas.getText().toString();
+
+                                if(TextUtils.isEmpty(kapalNull)) {
+                                    inputLuas.setError("nilai tidak boleh kosong");
+                                    return;
+                                }
+
+                                String strKapal = inputLuas.getText().toString();
+                                double kapal = Double.parseDouble(strKapal);
+
+                                String hasil = String.valueOf(40000 * kapal);
+                                hasilHitung.setText(hasil);
+                                keterangan.setText(R.string.ket_pengangkutan_ikan);
+                            }
+                        });
                     }
                         }
 

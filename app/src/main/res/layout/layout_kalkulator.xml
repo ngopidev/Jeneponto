@@ -229,23 +229,29 @@
         android:visibility="gone">
     </Spinner>
 
-    <LinearLayout
-        android:id="@+id/linear_ikan"
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/text_luas"
+        android:layout_width="130dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/spin_rumput"
-        android:orientation="horizontal">
+        android:layout_below="@id/linear_asing"
+        android:textSize="15dp"
+        android:layout_marginTop="207dp"
+        android:paddingLeft="10dp"
+        android:visibility="gone"
+        />
 
-        <TextView
-            android:id="@+id/text_luas"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-        <EditText
-            android:id="@+id/input_luas"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
+    <EditText
+        android:id="@+id/input_luas"
+        android:layout_width="150dp"
+        android:layout_height="35dp"
+        android:layout_marginLeft="10dp"
+        android:layout_below="@id/linear_asing"
+        android:layout_marginTop="203dp"
+        android:background="@android:color/white"
+        android:layout_toRightOf="@id/text_luas"
+        android:textSize="20dp"
+        android:inputType="numberDecimal"
+        android:visibility="gone"/>
 
     <TextView
         android:id="@+id/keterangan"

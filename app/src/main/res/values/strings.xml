@@ -25,8 +25,7 @@
     <string name="ket_renovasi_gedung"><b>Perhitungan : L x It x Tk x HSbg</b>\n\nL = Luas lantai bangunan gedung\nV = Volume/besaran (dalam satuan m2, m, dan unit)\nI = Indeks\nIt = Indeks terintegrasi\nTk = Tingkat kerusakan (0.45 untuk tingkat kerusakan sedang, 0.65 untuk tingkat kerusakan berat)\n1.00 = Indeks pembangunan baru\nHSbg = Harga satuan retribusi bangunan gedung (hanya 1 tarif setiap kabupaten)</string>
     <string name="ket_bukan_gedung_baru"><b>Perhitungan : V x I x 1.00 x HSbg</b>\n\nL = Luas lantai bangunan gedung\nV = Volume/besaran (dalam satuan m2, m, dan unit)\nI = Indeks\nIt = Indeks terintegrasi\nTk = Tingkat kerusakan (0.45 untuk tingkat kerusakan sedang, 0.65 untuk tingkat kerusakan berat)\n1.00 = Indeks pembangunan baru\nHSbg = Harga satuan retribusi bangunan gedung (hanya 1 tarif setiap kabupaten)</string>
     <string name="ket_rehabilitasi_prasarana"><b>Perhitungan : V x I x Tk x HSbg\n\n</b>L = Luas lantai bangunan gedung\nV = Volume/besaran (dalam satuan m2, m, dan unit)\nI = Indeks\nIt = Indeks terintegrasi\nTk = Tingkat kerusakan (0.45 untuk tingkat kerusakan sedang, 0.65 untuk tingkat kerusakan berat)\n1.00 = Indeks pembangunan baru\nHSbg = Harga satuan retribusi bangunan gedung (hanya 1 tarif setiap kabupaten)</string>
-    <string name="ket_imb">
-        L = Luas lantai bangunan gedung\nV = Volume/besaran (dalam satuan m2, m, dan unit)\nI = Indeks\nIt = Indeks terintegrasi\nTk = Tingkat kerusakan (0.45 untuk tingkat kerusakan sedang, 0.65 untuk tingkat kerusakan berat)\n1.00 = Indeks pembangunan baru\nHSbg = Harga satuan retribusi bangunan gedung (hanya 1 tarif setiap kabupaten)
+    <string name="ket_imb">L = Luas lantai bangunan gedung\nV = Volume/besaran (dalam satuan m2, m, dan unit)\nI = Indeks\nIt = Indeks terintegrasi\nTk = Tingkat kerusakan (0.45 untuk tingkat kerusakan sedang, 0.65 untuk tingkat kerusakan berat)\n1.00 = Indeks pembangunan baru\nHSbg = Harga satuan retribusi bangunan gedung (hanya 1 tarif setiap kabupaten)
     </string>
 
 
@@ -75,21 +74,21 @@
         <item>Usaha keramba lebih dari 50 unit</item>
     </string-array>
 
-    <string name="ket_tawar1">Usaha pembenihan/pendederan ikan dengan luas 0,75 ha atau lebih\n<b>Perhitungan : Rp 100.000 x luas lahan (dalam hectare)</b></string>
+    <string name="ket_tawar1">Usaha pembenihan/pendederan ikan dengan luas 0,75 ha atau lebih\n\n<b>Perhitungan : Rp 100.000 x luas lahan (dalam hectare)</b></string>
 
-    <string name="ket_tawar2">Usaha pembekalan di kolam air tenang dengan luas lahan 2 ha atau lebih\n<b>Perhitungan : Rp 100.000 x luas lahan (dalam hectare)</b></string>
+    <string name="ket_tawar2">Usaha pembekalan di kolam air tenang dengan luas lahan 2 ha atau lebih\n\n<b>Perhitungan : Rp 100.000 x luas lahan (dalam hectare)</b></string>
 
-    <string name="ket_tawar3">Usaha pembekalan di kolam air deras lebih dari 5 unit, dengan ketentuan 1 unit = 100 m2<b>Perhitungan : Rp 150 x luas unit (dalam meter persegi)</b></string>
+    <string name="ket_tawar3">Usaha pembekalan di kolam air deras lebih dari 5 unit, dengan ketentuan 1 unit = 100 m2\n\n<b>Perhitungan : Rp 150 x luas unit (dalam meter persegi)</b></string>
 
-    <string name="ket_tawar4">Usaha keramba jaring apung lebih dari 4 unit, dengan ketentuan 1 unit = (4x7x7x2,5 m3)\n<b>Perhitungan : Rp 15.000 x luas unit (dalam meter persegi)</b></string>
+    <string name="ket_tawar4">Usaha keramba jaring apung lebih dari 4 unit, dengan ketentuan 1 unit = (4x7x7x2,5 m3)\n\n<b>Perhitungan : Rp 15.000 x luas unit (dalam meter persegi)</b></string>
 
-    <string name="ket_tawar5">Usaha keramba lebih dari 50 unit, dengan ketentuan 1 unit = 4x2x1.5 m3\n<b>Perhitungan : Rp 150 x luas unit (dalam meter persegi)</b></string>
+    <string name="ket_tawar5">Usaha keramba lebih dari 50 unit, dengan ketentuan 1 unit = 4x2x1.5 m3\n\n<b>Perhitungan : Rp 150 x luas unit (dalam meter persegi)</b></string>
 
     <string name="luas_lahan">Luas Lahan : </string>
     <string name="luas_unit">Luas Unit : </string>
     <string name="luas_lepas_dasar">Luas Lepas Dasar : </string>
     <string name="luas_longline">Luas Long Line : </string>
-    <string name="luas_usaha_rakit_apung">Luas Usaha Rakit Apung</string>
+    <string name="luas_usaha_rakit_apung">Luas Usaha\nRakit Apung : </string>
 
     <string-array name="perikanan_payau">
         <item>Pilih metode perikanan air payau</item>
@@ -112,26 +111,19 @@
         <item>Long line</item>
     </string-array>
 
-    <string name="ket_payau1">Usaha pembenihan/pendederan dengan luas lahan 0,5 ha atau lebih</string>
-    <string name="rumus_payau1">Rp 100.000 x luas lahan (dalam hectare)</string>
+    <string name="ket_payau1">Usaha pembenihan/pendederan dengan luas lahan 0,5 ha atau lebih\n\n<b>Perhitungan : Rp 100.000 x luas lahan (dalam hectare)</b></string>
 
-    <string name="ket_payau2">Usaha pembesaran ikan dengan luas lahan5 ha atau lebih</string>
-    <string name="rumus_payau2">Rp 100.000/ha x luas lahan (dalam hectare)</string>
+    <string name="ket_payau2">Usaha pembesaran ikan dengan luas lahan5 ha atau lebih\n\n<b>Perhitungan : Rp 100.000/ha x luas lahan (dalam hectare)</b></string>
 
-    <string name="ket_rumput_lepas">Lepas dasar lebih dari 8 unit dengan ketentuan 1 unit = (100x5) m2</string>
-    <string name="rumus_rumput_lepas">Rp 5 x luas lepas dasar (dalam m2)</string>
+    <string name="ket_rumput_lepas">Lepas dasar lebih dari 8 unit dengan ketentuan 1 unit = (100x5) m2\n\n<b>Perhitungan : Rp 5 x luas lepas dasar (dalam m2)</b></string>
 
-    <string name="ket_rumput_rakit">Usaha rakit apung lebih dari 20 unit dengan ketentuan 1 unit = 20 rakit, 1 rakit = (5x2) m2</string>
-    <string name="rumus_rumput_rakit">Rp 5 x luas usaha rakit apung (dalam m2)</string>
+    <string name="ket_rumput_rakit">Usaha rakit apung lebih dari 20 unit dengan ketentuan 1 unit = 20 rakit, 1 rakit = (5x2) m2\n\n<b>Perhitungan : Rp 5 x luas usaha rakit apung (dalam m2)</b></string>
 
-    <string name="ket_rumput_longline">Long line lebih dari 2 unit dengan ketentuan 1 unit = 1 ha</string>
-    <string name="rumus_rumput_longline">Rp 50.000 x luas long line (dalam hektar)</string>
+    <string name="ket_rumput_longline">Long line lebih dari 2 unit dengan ketentuan 1 unit = 1 ha\n\n<b>Perhitungan : Rp 50.000 x luas long line (dalam hektar)</b></string>
 
-    <string name="ket_kerang_rakit">Usaha rakit apung atau rakit tancap lebih dari 30 unit dengan ketentuan 1 unit = (4x4) m2</string>
-    <string name="rumus_kerang_rakit">Rp 5 x luas usaha rakit apung (dalam m2)</string>
+    <string name="ket_kerang_rakit">Usaha rakit apung atau rakit tancap lebih dari 30 unit dengan ketentuan 1 unit = (4x4) m2\n\n<b>Perhitungan : Rp 5 x luas usaha rakit apung (dalam m2)</b></string>
 
-    <string name="ket_kerang_longline">Long line 10 unit ukuran 100 m</string>
-    <string name="rumus_kerang_longline">Rp 10 x ukuran longline (dalam m)</string>
+    <string name="ket_kerang_longline">Long line 10 unit ukuran 100 m\n\n<b>Perhitungan : Rp 10 x ukuran longline (dalam m)</b></string>
 
     <string-array name="penangkapan_ikan">
         <item>Pilih metode penangkapan ikan</item>
@@ -141,19 +133,17 @@
         <item>alat lainnya dengan bobot kapal dibawah 5 GT</item>
     </string-array>
 
-    <string name="ket_ikan_kapal">Usaha perikanan penangkapan ikan dengan kapal bobot dibawah 5 GT</string>
-    <string name="rumus_ikan_kapal">Rp 40.000 x jumlah kapal</string>
+    <string name="jumlah_kapal">Jumlah Kapal : </string>
+    <string name="jumlah_kapal_tahun">Jumlah Kapal per Tahun : </string>
 
-    <string name="ket_ikan_longline">Usaha penangkapan ikan dengan menggunakan rawe (longline) dan gill net dengan bobot kapal dibawah 5 GT</string>
-    <string name="rumus_ikan_longline">Rp 30.000 x jumlah kapal per tahun</string>
+    <string name="ket_ikan_kapal">Usaha perikanan penangkapan ikan dengan kapal bobot dibawah 5 GT\n\n<b>Perhitungan : Rp 40.000 x jumlah kapal</b></string>
 
-    <string name="ket_ikan_purse">Usaha penangkapan ikan dengan menggunakan mini purse seine, ampera dibawah 5 GT</string>
-    <string name="rumus_ikan_purse">Rp 35.000 x jumlah kapal per tahun</string>
+    <string name="ket_ikan_longline">Usaha penangkapan ikan dengan menggunakan rawe (longline) dan gill net dengan bobot kapal dibawah 5 GT\n\n<b>Perhitungan : Rp 30.000 x jumlah kapal per tahun</b></string>
 
-    <string name="ket_ikan_other">Usaha perikanan penangkapan ikan dengan metode lainnya</string>
-    <string name="rumus_ikan_other">Rp 25.000 x jumlah kapal per tahun</string>
+    <string name="ket_ikan_purse">Usaha penangkapan ikan dengan menggunakan mini purse seine, ampera dibawah 5 GT\n\n<b>Perhitungan : Rp 35.000 x jumlah kapal per tahun</b></string>
 
-    <string name="ket_pengangkutan_ikan">Usaha perikanan pengangkutan ikan dengan kapal berbobot dibawah 5 GT</string>
-    <string name="rumus_pengangkutan_ikan">Rp 40.000 x jumlah kapal</string>
+    <string name="ket_ikan_other">Usaha perikanan penangkapan ikan dengan metode lainnya\n\n<b>Perhitungan : Rp 25.000 x jumlah kapal per tahun</b></string>
+
+    <string name="ket_pengangkutan_ikan">Usaha perikanan pengangkutan ikan dengan kapal berbobot dibawah 5 GT\n\n<b>Perhitungan : Rp 40.000 x jumlah kapal</b></string>
 </resources>
 
