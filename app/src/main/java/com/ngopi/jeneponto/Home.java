@@ -164,7 +164,6 @@ public class Home extends AppCompatActivity
             Intent ipros = new Intent(getApplicationContext(), Perizinan.class);
             startActivity(ipros);
             drawerLayout.closeDrawers();
-//            Sdialog();
         } else if (id == R.id.tracking) {
             Sdialog();
         } else if (id == R.id.kalkulator) {
