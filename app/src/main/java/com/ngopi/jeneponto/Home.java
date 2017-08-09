@@ -160,10 +160,11 @@ public class Home extends AppCompatActivity
             Sdialog();
         } else if (id == R.id.peluang) {
             Sdialog();
-        } else if (id == R.id.prosedur) {
-//            Intent ipros = new Intent(getApplicationContext(), Prosedur.class);
-//            startActivity(ipros);
-            Sdialog();
+        } else if (id == R.id.perizinan) {
+            Intent ipros = new Intent(getApplicationContext(), Perizinan.class);
+            startActivity(ipros);
+            drawerLayout.closeDrawers();
+//            Sdialog();
         } else if (id == R.id.tracking) {
             Sdialog();
         } else if (id == R.id.kalkulator) {

@@ -15,8 +15,8 @@
             android:icon="@drawable/investasi"
             android:title="Peluang Investasi" />
         <item
-            android:id="@+id/prosedur"
-            android:icon="@drawable/prosedur"
+            android:id="@+id/perizinan"
+            android:icon="@drawable/perizinan"
             android:title="Prosedur Perizinan" />
         <item
             android:id="@+id/tracking"

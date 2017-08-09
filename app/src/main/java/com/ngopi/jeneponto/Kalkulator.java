@@ -22,9 +22,13 @@ import android.widget.Toast;
 import java.util.List;
 import java.util.StringTokenizer;
 
+//import butterknife;
+//import butterknife.Bind;
+
 public class Kalkulator extends Home {
 
     private Spinner izinPertama;
+    //@Bind(R.id.button_hitung);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
